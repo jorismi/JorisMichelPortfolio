@@ -1,0 +1,156 @@
+$borderRadiusCard: 1rem;
+$cssIconColor: #2194f0;
+$javascriptIconColor: #f7c43a;
+$HTMLIconColor: #e96228;
+$pythonIconColor: #579acd;
+$ionicIconColor: #e04a3a;
+$chromeIconColor: #32a350;
+$nodeJSIconColor: #84ba41;
+
+.projectsContainer {
+	display: grid;
+	max-width: 90vw;
+	margin: 0 auto;
+	grid-gap: 2rem 1.5rem;
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+.projectCard {
+	display: grid;
+	grid-template-rows: 15rem 3rem 1fr 5rem 3rem;
+	border-radius: $borderRadiusCard;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+
+	.cardImageContainer {
+		img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+			border-top-left-radius: $borderRadiusCard;
+			border-top-right-radius: $borderRadiusCard;
+		}
+	}
+
+	h1 {
+		margin: 0.5rem auto;
+	}
+
+	p {
+		margin: 1rem 0.5rem;
+	}
+
+	.technoContainer {
+		margin: 0 0 1rem 0;
+		text-align: center;
+		&:before {
+			content: "";
+			border-top: 0.2rem solid #f2f4f7;
+			margin: 0.5rem 0 0.5rem 0;
+			display: block;
+			width: 100%;
+		}
+
+		i {
+			font-size: 3em;
+			margin: 0 0.5rem;
+		}
+		.fa-css3-alt {
+			color: $cssIconColor;
+		}
+		.fa-js-square {
+			color: $javascriptIconColor;
+		}
+		.fa-html5 {
+			color: $HTMLIconColor;
+		}
+		.fa-python {
+			color: $pythonIconColor;
+		}
+		.fa-mobile-alt {
+			color: $ionicIconColor;
+		}
+		.fa-chrome {
+			color: $chromeIconColor;
+		}
+		.fa-node-js {
+			color: $nodeJSIconColor;
+		}
+	}
+
+	/* Tooltip inspired by W3CSchool */
+	/* https://www.w3schools.com/css/css_tooltip.asp */
+	/* Tooltip container */
+	.tooltip {
+		position: relative;
+		display: inline-block;
+	}
+
+	/* Tooltip text */
+	.tooltip .tooltiptext {
+		visibility: hidden;
+		font-size: 1rem;
+		width: 5rem;
+		top: 100%;
+		left: 50%;
+		margin-left: -2.5rem; /* Use half of the width (120/2 = 60), to center the tooltip */
+		background-color: black;
+		color: #fff;
+		text-align: center;
+		padding: 0.5rem 0;
+		border-radius: 0.5rem;
+		border: 1px solid black;
+		/* Position the tooltip text - see examples below! */
+		position: absolute;
+		z-index: 1;
+	}
+
+	.fa-css3-alt.tooltip .tooltiptext {
+		background-color: darken($cssIconColor, 10%);
+	}
+	.fa-js-square.tooltip .tooltiptext {
+		background-color: darken($javascriptIconColor, 12%);
+	}
+	.fa-html5.tooltip .tooltiptext {
+		background-color: darken($HTMLIconColor, 10%);
+	}
+	.fa-python.tooltip .tooltiptext {
+		background-color: darken($pythonIconColor, 10%);
+	}
+	.fa-mobile-alt.tooltip .tooltiptext {
+		background-color: darken($ionicIconColor, 10%);
+	}
+	.fa-chrome.tooltip .tooltiptext {
+		background-color: darken($chromeIconColor, 10%);
+	}
+	.fa-node-js.tooltip .tooltiptext {
+		background-color: darken($nodeJSIconColor, 10%);
+	}
+	/* Show the tooltip text when you mouse over the tooltip container */
+	.tooltip:hover .tooltiptext {
+		visibility: visible;
+	}
+
+	.tooltip .tooltiptext::after {
+		content: " ";
+		position: absolute;
+		bottom: 100%; /* At the bottom of the tooltip */
+		left: 50%;
+		margin-left: -5px;
+		border-width: 5px;
+		border-style: solid;
+		border-color: transparent transparent black transparent;
+	}
+
+	.linksContainer {
+		background-color: #f2f4f7;
+		text-align: center;
+		font-weight: bold;
+		text-decoration: none;
+		font-size: 1.3rem;
+		color: black;
+		padding: 0.5rem;
+		display: block;
+		border-bottom-left-radius: $borderRadiusCard;
+		border-bottom-right-radius: $borderRadiusCard;
+	}
+}
