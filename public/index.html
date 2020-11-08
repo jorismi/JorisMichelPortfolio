@@ -1,89 +1,130 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://kit.fontawesome.com/5bb079e0f1.js" crossorigin="anonymous"></script>
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.0.1/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.0.1/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.0.1/firebase-database.js"></script>
-    <script defer src="/__/firebase/8.0.1/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/8.0.1/firebase-functions.js"></script>
-    <script defer src="/__/firebase/8.0.1/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/8.0.1/firebase-storage.js"></script>
-    <script defer src="/__/firebase/8.0.1/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/8.0.1/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.0.1/firebase-performance.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+		<!-- The core Firebase JS SDK is always required and must be listed first -->
+		<script src="/__/firebase/8.0.1/firebase-app.js"></script>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+		https://firebase.google.com/docs/web/setup#available-libraries -->
+		<script src="/__/firebase/8.0.1/firebase-analytics.js"></script>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+		<!-- Initialize Firebase -->
+		<script src="/__/firebase/init.js"></script>
+		
+		<link rel="stylesheet" href="public\styles.css">
+	</head>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+	<body>
+		<div class="projectsContainer">
+			<div class="projectCard">
+				<div class="cardImageContainer"><img src="https://i.imgur.com/yxUEtA7.png"
+						alt="image of my game of life project">
+				</div>
+				<h1>Game of life</h1>
+				<p>Inspired by the cellular automaton devised by the British mathematician John Horton Conway in 1970, I
+					made a web version of it. To discover what it is, I invite to take a look at my project. <br><br>
+					This project made me learn more about <b>data structure</b>, like double array and how manipulate them
+					with JS. I also had to designed the <b>UI</b> to keep it simple and functional. It was also a great
+					reminder of the <b>event loop</b>.</p>
+				<div class="technoContainer">
+					<i class="fab fa-html5 tooltip"><span class="tooltiptext">HTML 5</span></i>
+					<i class="fab fa-js-square tooltip"><span class="tooltiptext">Javascript</span></i>
+					<i class="fab fa-css3-alt tooltip"><span class="tooltiptext">CSS 3</span></i>
+				</div>
+				<a href="https://codepen.io/jorismi/pen/qBNNBze" class="linksContainer">SEE IN ACTION</a>
+			</div>
+			<div class="projectCard">
+				<div class="cardImageContainer"><img src="https://i.imgur.com/ztNBEhw.png" alt="Image of my Python GUI">
+				</div>
+				<h1>Python GUI</h1>
+				<p>A youtuber that I follow asked for help to create a <b>GUI</b> to ease the use of the script he made.
+					Like I was learning Python, it was the perfect occasion for me to learn how to make an <b>graphical
+						interface</b> with Python. <br /><br />
+					I choose to use the old library <b>Tkinter</b> which was well documented and easy to install. Drawback
+					is that the design is a litte bit old. Next time i'llgive a try to <b>Kivy</b><br><br>
+					It was also the first time that I take part of a project made by a total stranger. It made me want to
+					work more on <b>open source projects</b> on Github.</p>
+				<div class="technoContainer">
+					<i class="fab fa-python tooltip"><span class="tooltiptext">Python</span></i>
+					<i class="fab fa-github tooltip"><span class="tooltiptext">Github</span></i>
+				</div>
+				<a href="https://github.com/pierreminiggio/vegas-rendering-queue" class="linksContainer">SEE CODE</a>
+			</div>
+			<div class="projectCard">
+				<div class="cardImageContainer"><img src="https://i.imgur.com/qSIApjO.png"
+						alt="Grapefruit slice atop a pile of other slices">
+				</div>
+				<h1>Fitness Timer</h1>
+				<p>To stay in shape for my Badminton hobby, I casually make fitness sessions. I used my mobile timer, but it
+					was not enough. For example, I need to do 3 repetitions of 30 sec and then one rest repetition of 45
+					sec, 3 times in a row.<br><br>
+					I wanted to learn to developp mobile app so I choose <b>Ionic framework</b> to program my custom timer.
+					Ionic use <b>Typescript</b>, which was perfect because I was learning <b>Angular</b> at the same
+					time.<br><br>
+					I didn't go until the step of publishing my app onto Google Play store, it's why you can see
+					only the code on Github and not the mobile app in action.</p>
+				<div class="technoContainer">
+					<i class="fas fa-mobile-alt tooltip"><span class="tooltiptext">Ionic</span></i>
+				</div>
+				<a href="https://codepen.io/jorismi/pen/qBNNBze" class="linksContainer">SEE CODE</a>
+			</div>
+			<div class="projectCard">
+				<div class="cardImageContainer"><img src="https://i.imgur.com/rbX7pfO.png?1"
+						alt="image of my randow draw extension">
+				</div>
+				<h1>Random draw</h1>
+				<p>Every morning at work, we start the day with a <b>DSTUM</b> (<b>D</b>aily <b>S</b>tand-<b>U</b>p
+					<b>M</b>eeting). Each morning, someone had to volunteer to present this meeting. So, to avoid injustice,
+					I made a <b>Chrome extension</b> of a random draw. <br> <br>
+					You can add or delete participant, reset the game to put back former chosen one into the draw and also
+					delete all challengers. In bonus, you have a <b>rain of confetti</b> when you draw someone and <b>funny
+						GIF</b> for each action.<br><br>
+					Same as Fitness Timer, I didn't go through all the process to publish on Google market for extension.
+				</p>
+				<div class="technoContainer">
+					<i class="fab fa-html5 tooltip"><span class="tooltiptext">HTML 5</span></i>
+					<i class="fab fa-js-square tooltip"><span class="tooltiptext">Javascript</span></i>
+					<i class="fab fa-css3-alt tooltip"><span class="tooltiptext">CSS 3</span></i>
+					<i class="fab fa-chrome tooltip"><span class="tooltiptext">Chrome extension</span></i>
+				</div>
+				<a href="https://codepen.io/jorismi/pen/qBNNBze" class="linksContainer">SEE IN ACTION</a>
+			</div>
+			<div class="projectCard">
+				<div class="cardImageContainer"><img src="https://i.imgur.com/uBpLoRG.png"
+						alt="Image of a conversation with my slack bot">
+				</div>
+				<h1>Bot slack</h1>
+				<p>My badminton club is using <b>Slack</b> to share information and chat with all players. Each beginning of
+					a week, a member of staff have to post messages to know how many players are planning to come each day.
+					<br><br>
+					It's pretty boring, so I make a <b>Slack bot</b> to automatically post this message each Sunday. Like my
+					badminton club is closed during pandemic, I haven't yes test it in "production".<br><br>
+					It was simply made with <b>nodeJS</b> server on <b>Heroku</b> that is launching a script every Sunday to
+					call <b>Slack API</b> for posting messages.</p>
+				<div class="technoContainer">
+					<i class="fab fa-node-js tooltip"><span class="tooltiptext">CSS 3</span></i>
+				</div>
+				<a href="https://codepen.io/jorismi/pen/qBNNBze" class="linksContainer">SEE IN ACTION</a>
+			</div>
+			<div class="projectCard">
+				<div class="cardImageContainer"><img src="https://i.imgur.com/SwygF5s.png"
+						alt="Image of landing page of my first Portfolio">
+				</div>
+				<h1>First portfolio</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+					dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+					ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+					fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+					deserunt mollit anim id est laborum.</p>
+				<div class="technoContainer">
+					<i class="fab fa-html5 tooltip"><span class="tooltiptext">HTML 5</span></i>
+					<i class="fab fa-js-square tooltip"><span class="tooltiptext">Javascript</span></i>
+					<i class="fab fa-css3-alt tooltip"><span class="tooltiptext">CSS 3</span></i>
+				</div>
+				<a href="https://codepen.io/jorismi/pen/qBNNBze" class="linksContainer">SEE IN ACTION</a>
+			</div>
+		</div>
+	</body>
 </html>
