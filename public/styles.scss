@@ -1,11 +1,4 @@
 $borderRadiusCard: 1rem;
-$cssIconColor: #2194f0;
-$javascriptIconColor: #f7c43a;
-$HTMLIconColor: #e96228;
-$pythonIconColor: #579acd;
-$ionicIconColor: #e04a3a;
-$chromeIconColor: #32a350;
-$nodeJSIconColor: #84ba41;
 
 .projectsContainer {
 	display: grid;
@@ -13,6 +6,16 @@ $nodeJSIconColor: #84ba41;
 	margin: 0 auto;
 	grid-gap: 2rem 1.5rem;
 	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+@media (max-width: 768px){ 
+	.projectsContainer {
+		display: grid;
+		max-width: 90vw;
+		margin: 0 auto;
+		grid-gap: 2rem 1.5rem;
+		grid-template-columns: 1fr;
+	}	
 }
 
 .projectCard {
@@ -42,6 +45,8 @@ $nodeJSIconColor: #84ba41;
 	.technoContainer {
 		margin: 0 0 1rem 0;
 		text-align: center;
+
+		
 		&:before {
 			content: "";
 			border-top: 0.2rem solid #f2f4f7;
@@ -50,30 +55,10 @@ $nodeJSIconColor: #84ba41;
 			width: 100%;
 		}
 
-		i {
-			font-size: 3em;
+		img{
+			max-width: 3rem;
+			max-height: 3rem;
 			margin: 0 0.5rem;
-		}
-		.fa-css3-alt {
-			color: $cssIconColor;
-		}
-		.fa-js-square {
-			color: $javascriptIconColor;
-		}
-		.fa-html5 {
-			color: $HTMLIconColor;
-		}
-		.fa-python {
-			color: $pythonIconColor;
-		}
-		.fa-mobile-alt {
-			color: $ionicIconColor;
-		}
-		.fa-chrome {
-			color: $chromeIconColor;
-		}
-		.fa-node-js {
-			color: $nodeJSIconColor;
 		}
 	}
 
@@ -104,27 +89,6 @@ $nodeJSIconColor: #84ba41;
 		z-index: 1;
 	}
 
-	.fa-css3-alt.tooltip .tooltiptext {
-		background-color: darken($cssIconColor, 10%);
-	}
-	.fa-js-square.tooltip .tooltiptext {
-		background-color: darken($javascriptIconColor, 12%);
-	}
-	.fa-html5.tooltip .tooltiptext {
-		background-color: darken($HTMLIconColor, 10%);
-	}
-	.fa-python.tooltip .tooltiptext {
-		background-color: darken($pythonIconColor, 10%);
-	}
-	.fa-mobile-alt.tooltip .tooltiptext {
-		background-color: darken($ionicIconColor, 10%);
-	}
-	.fa-chrome.tooltip .tooltiptext {
-		background-color: darken($chromeIconColor, 10%);
-	}
-	.fa-node-js.tooltip .tooltiptext {
-		background-color: darken($nodeJSIconColor, 10%);
-	}
 	/* Show the tooltip text when you mouse over the tooltip container */
 	.tooltip:hover .tooltiptext {
 		visibility: visible;
