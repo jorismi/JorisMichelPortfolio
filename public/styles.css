@@ -1,3 +1,49 @@
+body {
+  background-color: #0a2a43; }
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 10rem 0; }
+  section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none; }
+  section:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #0a2a43, transparent);
+    z-index: 9999; }
+  section:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a2a43;
+    z-index: 9999;
+    mix-blend-mode: color; }
+  section #title {
+    position: relative;
+    color: white;
+    font-size: 10vh;
+    z-index: 1; }
+  section #road {
+    z-index: 2; }
+
 .projectsContainer {
   display: grid;
   max-width: 90vw;
