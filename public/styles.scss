@@ -1,63 +1,136 @@
 $borderRadiusCard: 1rem;
-$bgPrimaryColor:  #0a2a43;
 
 body{
-	background-color: $bgPrimaryColor;
+	margin: 0;
+	background: linear-gradient(to bottom, #68a4ca 150vh,#7fc3d4);
 }
 
-section{
+section {
 	position: relative;
 	width: 100%;
-	height: 100vh;
+	height: 150vh;
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 0 0 10rem 0;
-
-	img{
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: contain;
-		pointer-events: none;
-	}
-
+	background-image: url(assets/parallaxHeaderImages/bgHeader.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin: 0 0 5rem 0;
 	&:before{
 		content: '';
 		position: absolute;
 		bottom: 0;
 		width: 100%;
-		height: 100px;
-		background: linear-gradient(to top, $bgPrimaryColor, transparent);
-		z-index: 9999;
+		height: 200px;
+		background: linear-gradient(to top,  #68a4ca, transparent);
+		z-index: 10000;
 	}
 
-	&:after{
-		content: '';
+	img {
+		overflow: hidden;
 		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: $bgPrimaryColor;
-		z-index: 9999;
-		mix-blend-mode: color;
+		width: 60vw;
+		object-fit: cover;
+		pointer-events: none;
+		border-radius: $borderRadiusCard;
+		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
 	}
 
-	#title{
+	@media (min-width: 1440px) { 
+		img {
+			overflow: hidden;
+			position: absolute;
+			width: 50vw;
+			object-fit: scale-down;
+			pointer-events: none;
+		}
+	}
+
+	#vsCodeLayer {
+		transform: rotate(15deg);
+		bottom: 25%;
+		left: 5%;
+		z-index: 6;
+	}
+	
+	#sqlDevLayer {
+		transform: rotate(-15deg);
+		bottom: 25%;
+		right: 5%;
+		z-index: 5;
+	}
+	
+	#jenkinsLayer {
+		transform: rotate(-10deg);
+		bottom: 50%;
+		left: 5%;
+		z-index: 2;
+	}
+
+	#kibanaLayer {
+		transform: rotate(10deg);
+		bottom: 50%;
+		right: 5%;
+		z-index: 3;
+	}
+
+	#titleHeader {
 		position: relative;
 		color: white;
 		font-size: 10vh;
+		top: 75vh;
+		opacity: 75%;
 		z-index: 1;
+		text-align: center;
 	}
 
-	#road{
-		z-index: 2;
+	#scrollIndicator {
+		bottom: 10vh;
+		margin: 0 auto;
+		position: fixed;
+		min-width: 3rem;
+		min-height: 5rem;
+		border-radius: 35px;
+		box-shadow: inset 0 0 0 0.1rem #fff;
+		z-index: 9999;
+		opacity: 0;
+		animation: 1s 2s 1 ease-in-out forwards fadeIn;
+
+		@keyframes fadeIn {
+			to {
+				opacity: 100%;
+			}
+		}
+
+		&:before{
+			content: "";
+			position: absolute;
+			left: 34%;
+			top: 10%;
+			width: 1rem;
+			height: 1rem;
+			border-radius: 100%;
+			background-color: white;
+			opacity: 100%;
+			animation: 1.5s infinite ease-in-out scroll;
+
+			@keyframes scroll {
+				0% {
+					opacity: 0%;
+				}
+				50% {
+					opacity: 100%;
+				}
+				100% {
+					opacity: 0%;
+					transform: translateY(275%);
+				}
+			}
+		}
+		
 	}
-}
+}  
 
 .projectsContainer {
 	display: grid;
@@ -67,7 +140,7 @@ section{
 	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
 
-@media (max-width: 768px){ 
+@media (max-width: 768px) { 
 	.projectsContainer {
 		display: grid;
 		max-width: 90vw;
@@ -82,7 +155,7 @@ section{
 	grid-template-rows: 15rem 3rem 1fr 5rem 3rem;
 	border-radius: $borderRadiusCard;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
-
+	background-color: white;
 	.cardImageContainer {
 		img {
 			object-fit: cover;
@@ -113,7 +186,7 @@ section{
 			width: 100%;
 		}
 
-		img{
+		img {
 			max-width: 3rem;
 			max-height: 3rem;
 			margin: 0 0.5rem;

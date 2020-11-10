@@ -1,48 +1,105 @@
 body {
-  background-color: #0a2a43; }
+  margin: 0;
+  background: linear-gradient(to bottom, #68a4ca 150vh, #7fc3d4); }
 
 section {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 150vh;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 0 10rem 0; }
-  section img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    pointer-events: none; }
+  background-image: url(assets/parallaxHeaderImages/bgHeader.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0 0 5rem 0; }
   section:before {
     content: '';
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 100px;
-    background: linear-gradient(to top, #0a2a43, transparent);
-    z-index: 9999; }
-  section:after {
-    content: '';
+    height: 200px;
+    background: linear-gradient(to top, #68a4ca, transparent);
+    z-index: 10000; }
+  section img {
+    overflow: hidden;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #0a2a43;
-    z-index: 9999;
-    mix-blend-mode: color; }
-  section #title {
+    width: 60vw;
+    object-fit: cover;
+    pointer-events: none;
+    border-radius: 1rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35); }
+  @media (min-width: 1440px) {
+    section img {
+      overflow: hidden;
+      position: absolute;
+      width: 50vw;
+      object-fit: scale-down;
+      pointer-events: none; } }
+  section #vsCodeLayer {
+    transform: rotate(15deg);
+    bottom: 25%;
+    left: 5%;
+    z-index: 6; }
+  section #sqlDevLayer {
+    transform: rotate(-15deg);
+    bottom: 25%;
+    right: 5%;
+    z-index: 5; }
+  section #jenkinsLayer {
+    transform: rotate(-10deg);
+    bottom: 50%;
+    left: 5%;
+    z-index: 2; }
+  section #kibanaLayer {
+    transform: rotate(10deg);
+    bottom: 50%;
+    right: 5%;
+    z-index: 3; }
+  section #titleHeader {
     position: relative;
     color: white;
     font-size: 10vh;
-    z-index: 1; }
-  section #road {
-    z-index: 2; }
+    top: 75vh;
+    opacity: 75%;
+    z-index: 1;
+    text-align: center; }
+  section #scrollIndicator {
+    bottom: 10vh;
+    margin: 0 auto;
+    position: fixed;
+    min-width: 3rem;
+    min-height: 5rem;
+    border-radius: 35px;
+    box-shadow: inset 0 0 0 0.1rem #fff;
+    z-index: 9999;
+    opacity: 0;
+    animation: 1s 2s 1 ease-in-out forwards fadeIn; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 100%; } }
+    section #scrollIndicator:before {
+      content: "";
+      position: absolute;
+      left: 34%;
+      top: 10%;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 100%;
+      background-color: white;
+      opacity: 100%;
+      animation: 1.5s infinite ease-in-out scroll; }
+
+@keyframes scroll {
+  0% {
+    opacity: 0%; }
+  50% {
+    opacity: 100%; }
+  100% {
+    opacity: 0%;
+    transform: translateY(275%); } }
 
 .projectsContainer {
   display: grid;
@@ -64,6 +121,7 @@ section {
   grid-template-rows: 15rem 3rem 1fr 5rem 3rem;
   border-radius: 1rem;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+  background-color: white;
   /* Tooltip inspired by W3CSchool */
   /* https://www.w3schools.com/css/css_tooltip.asp */
   /* Tooltip container */
