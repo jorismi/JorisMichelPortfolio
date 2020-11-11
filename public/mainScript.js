@@ -10,9 +10,24 @@ let coefFastTranslateAnimationHeaderParallax = 0.3;
 let coefScaleAnimationHeaderParallax = 0.001;
 let coefBlurAnimationHeaderParallax = 0.005;
 
+
+window.addEventListener('resize', resizing, false);
+
+function resizing() {
+    titleHeaderAnimation();
+}
+
+function titleHeaderAnimation() {
+    if (window.matchMedia("(min-width: 800px)").matches) {
+        titleHeader.style.opacity = (100 - window.scrollY * 0.1) + "%";
+    } else {
+        titleHeader.style.opacity = (100 - window.scrollY * 0.2) + "%";
+    }
+}
+
 window.addEventListener("scroll", function () {
     var value = window.scrollY;
-    if (value>300){
+    if (value > 300) {
         scrollIndicator.style.display = "none";
     }
     vsCodeLayer.style.transform = "translate(" + (-value * coefFastTranslateAnimationHeaderParallax) + "%," + (value * coefFastTranslateAnimationHeaderParallax) + "%) rotate(15deg) scale(" + (1 + value * coefScaleAnimationHeaderParallax) + ")";
@@ -27,6 +42,5 @@ window.addEventListener("scroll", function () {
     kibanaLayer.style.transform = "translate(" + (value * coefTranslateAnimationHeaderParallax) + "%," + (-value * coefTranslateAnimationHeaderParallax) + "%) rotate(10deg) scale(" + (1 + value * coefScaleAnimationHeaderParallax) + ")";
     kibanaLayer.style.filter = "blur(" + (value * coefBlurAnimationHeaderParallax) + "px)";
 
-    titleHeader.style.transform = "translateY(" + (-value * 0.2) + "%)";
-    titleHeader.style.opacity = (value * 0.1) + "%";
+    titleHeaderAnimation();
 });

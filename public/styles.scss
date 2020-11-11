@@ -1,4 +1,5 @@
 $borderRadiusCard: 1rem;
+$breakpointMobile: 800px;
 
 body{
 	margin: 0;
@@ -76,11 +77,10 @@ section {
 	}
 
 	#titleHeader {
-		position: relative;
+		position: fixed;
 		color: white;
 		font-size: 10vh;
-		top: 75vh;
-		opacity: 75%;
+		top: 30vh;
 		z-index: 1;
 		text-align: center;
 	}
@@ -128,7 +128,6 @@ section {
 				}
 			}
 		}
-		
 	}
 }  
 
@@ -138,16 +137,6 @@ section {
 	margin: 0 auto;
 	grid-gap: 2rem 1.5rem;
 	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-}
-
-@media (max-width: 768px) { 
-	.projectsContainer {
-		display: grid;
-		max-width: 90vw;
-		margin: 0 auto;
-		grid-gap: 2rem 1.5rem;
-		grid-template-columns: 1fr;
-	}	
 }
 
 .projectCard {
@@ -248,4 +237,53 @@ section {
 		border-bottom-left-radius: $borderRadiusCard;
 		border-bottom-right-radius: $borderRadiusCard;
 	}
+}
+
+@media (max-width: $breakpointMobile) { 
+	.projectsContainer {
+		display: grid;
+		max-width: 90vw;
+		margin: 0 auto;
+		grid-gap: 2rem 1.5rem;
+		grid-template-columns: 1fr;
+	}
+	
+	section {
+		position: relative;
+		width: 100%;
+		height: 90vh;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-image: url(assets/parallaxHeaderImages/bgHeader.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		margin: 0 0 5rem 0;
+		&:before{
+			content: '';
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 50px;
+			background: linear-gradient(to top,  #68a4ca, transparent);
+			z-index: 10000;
+		}
+	
+		img {
+			display: none;
+		}
+
+		#titleHeader {
+			position: fixed;
+			top: 20%;
+			color: white;
+			font-size: 5vh;
+			text-align: center;
+		}
+
+		#scrollIndicator {
+			display: none;
+		}
+	}	
 }
