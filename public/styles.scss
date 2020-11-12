@@ -137,24 +137,31 @@ body{
     padding: 1rem;
     gap: 2rem;
     max-width: 80vw;
-    margin: 0 auto;
+    margin: 5rem auto;
     background-color: white;
     border-radius: 0.5rem;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
-	font-size: 1.5vw;
+	font-size: 1.8vw;
+	text-align: center;
 
 	img {
 		width: 100%;
 	}
 
 	p {
-		padding-left: 1rem;
-		font-size: 1vw;
+		font-size: 1.4vw;
+	}
+
+	.interline{
+		text-align: center;
 	}
 
 	ul {
 		list-style-type: none;
-		padding-left: 1rem;
+		font-size: 3vw;
+		text-align: center;
+		margin: -1rem;
+		padding: 0;
 	}
 
 	.myContactLinks {
@@ -177,7 +184,7 @@ body{
 			background: #ccf6c8;
 		}
 		.circle:nth-child(2) {
-			background: lighten(#F6830F, 5%);
+			background: lighten(#F6830F, 15%);
 		}
 		.circle:nth-child(3) {
 			background: #fea5ad;
@@ -186,6 +193,11 @@ body{
 			background: lighten(#be8abf, 5%);
 		}
 	}
+}
+
+#projectsSection {
+	background-image: url('assets/projectsImages/projectsBg.jpg');
+	padding: 5rem 0;
 }
 
 .projectsContainer {
@@ -294,6 +306,10 @@ body{
 		border-bottom-left-radius: $borderRadiusCard;
 		border-bottom-right-radius: $borderRadiusCard;
 	}
+}
+
+#contactMeSection {
+	height: 100vh;
 }
 
 @media (max-width: $breakpointMobile) { 

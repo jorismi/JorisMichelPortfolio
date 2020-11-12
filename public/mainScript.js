@@ -1,3 +1,10 @@
+/* TODO LIST */
+/* TODO header : Make text disappear behind tree */
+/* TODO AboutMe section : Improve mobile design */
+/* TODO Check portfolio behavior when bad internet connection */
+
+
+
 let vsCodeLayer = document.getElementById("vsCodeLayer");
 let sqlDevLayer = document.getElementById("sqlDevLayer");
 let jenkinsLayer = document.getElementById("jenkinsLayer");
