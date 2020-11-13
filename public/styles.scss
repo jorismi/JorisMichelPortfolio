@@ -160,8 +160,8 @@ body{
 		list-style-type: none;
 		font-size: 3vw;
 		text-align: center;
-		margin: -1rem;
 		padding: 0;
+		margin-top: -1vw;
 	}
 
 	.myContactLinks {
@@ -309,8 +309,104 @@ body{
 }
 
 #contactMeSection {
-	height: 100vh;
+	height: 90vh;
 }
+
+#contactMeSection {
+	#contactMeContainer {
+		width: 70vw;
+		height: 70vh;
+		margin: 10vh auto;
+		background-color: white;
+		border-radius: 1%;
+		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+		display: grid;
+		grid-gap: 2rem;
+		grid-template-columns: 15vh 1fr;
+		grid-template-rows: 1fr 100%;
+		grid-template-areas:
+		"header header"
+		"links contactMeForm";
+
+	h1 {
+		grid-area: header;
+		justify-self: center;
+	}
+
+	.myContactLinks {
+		grid-area: links;
+		text-align: center;
+		.circle {
+			text-decoration: none;
+			display: inline-block;
+			width: 10vh;
+			height: 10vh;
+			line-height: 10vh;
+			border-radius: 50%;
+			font-weight: bold;
+			margin: 0.5vh 0;
+			color: black;
+		}
+
+		.circle:nth-child(1) {
+			background: #ccf6c8;
+		}
+		.circle:nth-child(2) {
+			background: lighten(#f6830f, 15%);
+		}
+		.circle:nth-child(3) {
+			background: #fea5ad;
+		}
+		.circle:nth-child(4) {
+			background: lighten(#be8abf, 5%);
+		}
+	}
+
+	#contactMeForm {
+		grid-area: contactMeForm;
+		justify-self: center;
+
+		/* All input from form except the button send */
+		div:not(:last-child) {
+			margin: 1rem 0;
+
+			:focus {
+				outline: none;
+				background-color: lighten(lightgray, 10%);
+			}
+
+			input,
+			textarea {
+				border: none;
+				border-radius: 25px;
+				background-color: lightgray;
+				height: 4vh;
+				width: 50vw;
+				text-indent: 1rem;
+			}
+
+			textarea {
+				resize: none;
+				height: 20vh;
+				padding-top: 1rem;
+			}
+		}
+
+		/* button send */
+		div:last-child {
+			text-align: center;
+
+			input {
+				font-weight: bold;
+				padding: 2vw;
+				border-radius: 25px;
+				border: none;
+				background-color: #ccf6c8;
+			}
+		}
+	}
+	}
+}  
 
 @media (max-width: $breakpointMobile) { 
 	.projectsContainer {

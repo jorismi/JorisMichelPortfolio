@@ -16,13 +16,14 @@
 	</section>
 	<section id="aboutMeSection">
 		<div class="aboutMeCard">
-			<div><img src="assets/aboutMeImages/aboutMePhoto.png">
+			<div><img src="assets/aboutMeImages/aboutMePhotoTer.png">
 			</div>
 			<div class="aboutMeParagraph">
 				<h2> Who am I?</h2>
 				<p> A french guy from Toulouse who dreams of coming to live in <b>Canada</b>.</p>
 				<p class="interline">&#127809;&#127809;&#127809;</p>
-				<p>More into system administration and DevOps stuff with my current job, I recently deep dive into <b>Web
+				<p>More into system administration and DevOps stuff with my current job, I recently deep dive into
+					<b>Web
 						development</b> as a hobby.</p>
 				<p class="interline">&#127809;&#127809;&#127809;</p>
 				<p>I would love to have the opportunity to start a new career as a <b>Canadian web developer</b>.</p>
@@ -39,7 +40,9 @@
 			</div>
 			<div class="myContactLinks">
 				<a class="circle" href="assets/myCV/CV_Quebec_Ang_MICHEL_Joris.pdf" target="_blank"
-					rel="noopener noreferrer""><div >Resume</div></a>
+					rel="noopener noreferrer">
+					<div>Resume</div>
+				</a>
 				<a class=" circle" href="https://www.linkedin.com/in/joris-michel-03b41082/" target="_blank"
 					rel="noopener noreferrer">
 					<div>LinkedIn</div>
@@ -208,7 +211,42 @@
 		</div>
 	</section>
 	<section id="contactMeSection">
-
+		<div id="contactMeContainer">
+			<h1>Get in touch</h1>
+			<div class="myContactLinks">
+				<a class="circle" href="assets/myCV/CV_Quebec_Ang_MICHEL_Joris.pdf" target="_blank"
+					rel="noopener noreferrer">
+					<div>Resume</div>
+				</a>
+				<a class=" circle" href="https://www.linkedin.com/in/joris-michel-03b41082/" target="_blank"
+					rel="noopener noreferrer">
+					<div>LinkedIn</div>
+				</a>
+				<a class="circle" href="https://codepen.io/jorismi/" target="_blank" rel="noopener noreferrer">
+					<div>CodePen</div>
+				</a>
+				<a class="circle" href="mailto:jorismichel@hotmail.fr">
+					<div>Mail</div>
+				</a>
+			</div>
+			<form action="mailto:jorismichel@hotmail.fr" method="post" enctype="text/plain" id="contactMeForm">
+				<div id="contactMeName">
+					<input type="text" name="name" id="name" placeholder="Your name" required>
+				</div>
+				<div id="contactMeMail">
+					<input type="email" name="mail" id="mail" placeholder="Your mail" required>
+				</div>
+				<div id="contactMeSubject">
+					<input type="text" name="subject" id="subject" placeholder="Subject" required>
+				</div>
+				<div id="contactMeMessage">
+					<textarea name="message" id="message" placeholder="Your message" required></textarea>
+				</div>
+				<div id="contactMeSend">
+					<input type="submit" value="SEND EMAIL">
+				</div>
+			</form>
+		</div>
 	</section>
 	<script type="text/javascript" src="mainScript.js"></script>
 
