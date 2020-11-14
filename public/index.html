@@ -11,6 +11,8 @@
 		<img src="assets/parallaxHeaderImages/sqlDev.png" id="sqlDevLayer">
 		<img src="assets/parallaxHeaderImages/jenkins.png" id="jenkinsLayer">
 		<img src="assets/parallaxHeaderImages/kibana.png" id="kibanaLayer">
+		<img src="assets/parallaxHeaderImages/bgSky.png" id="skyLayer" class="bg">
+		<img src="assets/parallaxHeaderImages/bgForest.png" id="forestLayer" class="bg">
 		<h1 id="titleHeader">Joris MICHEL<br>Web developer</h1>
 		<div id="scrollIndicator"></div>
 	</section>
@@ -59,30 +61,6 @@
 	<section id="projectsSection">
 		<div class="projectsContainer">
 			<div class="projectCard">
-				<div class="cardImageContainer"><img src="assets/projectsImages/oldPortfolio.png"
-						alt="Image of landing page of my first Portfolio">
-				</div>
-				<h1>First portfolio</h1>
-				<p>When I started to learn <b>web development</b>, I rush into the mainstream framework <b>Angular</b>.
-					For
-					practicing, I quickly made a fancy portfolio, full of interactivity, color and animation. I hosted
-					it
-					for free on <b>Netlify</b>, even if it wasn't finished yet and I was happy about it.<br><br>
-					But by taking a step back, I noticed that I was missing the base of web development. All the HTML,
-					CSS
-					and Javacript complexity was hidden by the framework.<br><br>
-					That's why I decided to stop this project and <b>get back to the fundamentals</b>, by making many
-					little
-					projects you can see in this new portfolio.</p>
-				<div class="technoContainer">
-					<div class="tooltip"><img src="assets/icons/angularIcon.png"></img><span
-							class="tooltiptext">Angular</span></div>
-					<div class="tooltip"><img src="assets/icons/netlifyIcon.png"></img><span
-							class="tooltiptext">Netlify</span></div>
-				</div>
-				<a href="https://codepen.io/jorismi/pen/qBNNBze" class="linksContainer">SEE IN ACTION</a>
-			</div>
-			<div class="projectCard">
 				<div class="cardImageContainer"><img src="assets/projectsImages/gameOfLife.png"
 						alt="image of my game of life project">
 				</div>
@@ -94,16 +72,47 @@
 					with JS. I also had to designed the <b>UI</b> to keep it simple and functional. It was also a great
 					reminder of the <b>event loop</b>.</p>
 				<div class="technoContainer">
-					<div class="tooltip"><img src="assets/icons/HTMLIcon.png"></img><span class="tooltiptext">HTML
-							5</span>
+					<div class="tooltip">
+						<img src="assets/icons/HTMLIcon.png"></img>
+						<span class="tooltiptext">HTML5</span>
 					</div>
-					<div class="tooltip"><img src="assets/icons/CSSIcon.png"></img><span class="tooltiptext">CSS
-							3</span>
+					<div class="tooltip">
+						<img src="assets/icons/CSSIcon.png"></img>
+						<span class="tooltiptext">CSS3</span>
 					</div>
-					<div class="tooltip"><img src="assets/icons/JSIcon.png"></img><span
-							class="tooltiptext">Javascript</span></div>
+					<div class="tooltip">
+						<img src="assets/icons/JSIcon.png"></img>
+						<span class="tooltiptext">Javascript</span>
+					</div>
 				</div>
 				<a href="https://codepen.io/jorismi/pen/qBNNBze" class="linksContainer">SEE IN ACTION</a>
+			</div>
+			<div class="projectCard">
+				<div class="cardImageContainer"><img src="assets/projectsImages/timePlank1.png"
+						alt="Screenshots of my fitness timer mobile app">
+				</div>
+				<h1>Fitness Timer</h1>
+				<p>To stay in shape for my Badminton hobby, I casually make fitness sessions. I used my mobile timer,
+					but it
+					was not enough. For example, I need to do 3 repetitions of 30 sec and then one rest repetition of 45
+					sec, 3 times in a row.<br><br>
+					I wanted to learn to developp mobile app so I choose <b>Ionic framework</b> to program my custom
+					timer.
+					Ionic use <b>Typescript</b>, which was perfect because I was learning <b>Angular</b> at the same
+					time.<br><br>
+					I didn't go until the step of publishing my app onto Google Play store, it's why you can see
+					only the code on Github and not the mobile app in action.</p>
+				<div class="technoContainer">
+					<div class="tooltip">
+						<img src="assets/icons/ionicIcon.png"></img>
+						<span class="tooltiptext">Ionic</span>
+					</div>
+					<div class="tooltip">
+						<img src="assets/icons/typeScriptIcon.png"></img>
+						<span class="tooltiptext">TypeScript</span>
+					</div>
+				</div>
+				<a href="https://github.com/jorismi/timePlank" class="linksContainer">SEE CODE</a>
 			</div>
 			<div class="projectCard">
 				<div class="cardImageContainer"><img src="assets/projectsImages/FairDraw2.png"
@@ -123,19 +132,50 @@
 					extension.
 				</p>
 				<div class="technoContainer">
-					<div class="tooltip"><img src="assets/icons/HTMLIcon.png"></img><span class="tooltiptext">HTML
-							5</span>
+					<div class="tooltip">
+						<img src="assets/icons/HTMLIcon.png"></img>
+						<span class="tooltiptext">HTML5</span>
 					</div>
-					<div class="tooltip"><img src="assets/icons/CSSIcon.png"></img><span class="tooltiptext">CSS
-							3</span>
+					<div class="tooltip">
+						<img src="assets/icons/CSSIcon.png"></img>
+						<span class="tooltiptext">CSS3</span>
 					</div>
 					<div class="tooltip"><img src="assets/icons/JSIcon.png"></img><span
 							class="tooltiptext">Javascript</span></div>
-					<div class="tooltip"><img src="assets/icons/chromeIcon.png"></img><span class="tooltiptext">Chrome
-							extension</span>
+					<div class="tooltip">
+						<img src="assets/icons/chromeIcon.png"></img>
+						<span class="tooltiptext">Chrome extension</span>
 					</div>
 				</div>
-				<a href="https://codepen.io/jorismi/pen/qBNNBze" class="linksContainer">SEE IN ACTION</a>
+				<a href="https://github.com/jorismi/fairDraw" class="linksContainer">SEE CODE</a>
+			</div>
+			<div class="projectCard">
+				<div class="cardImageContainer"><img src="assets/projectsImages/oldPortfolio.png"
+						alt="Image of landing page of my first Portfolio">
+				</div>
+				<h1>First portfolio</h1>
+				<p>When I started to learn <b>web development</b>, I rush into the mainstream framework <b>Angular</b>.
+					For
+					practicing, I quickly made a fancy portfolio, full of interactivity, color and animation. I hosted
+					it
+					for free on <b>Netlify</b>, even if it wasn't finished yet and I was happy about it.<br><br>
+					But by taking a step back, I noticed that I was missing the base of web development. All the HTML,
+					CSS
+					and Javacript complexity was hidden by the framework.<br><br>
+					That's why I decided to stop this project and <b>get back to the fundamentals</b>, by making many
+					little
+					projects you can see in this new portfolio.</p>
+				<div class="technoContainer">
+					<div class="tooltip">
+						<img src="assets/icons/angularIcon.png"></img>
+						<span class="tooltiptext">Angular</span>
+					</div>
+					<div class="tooltip">
+						<img src="assets/icons/netlifyIcon.png"></img>
+						<span class="tooltiptext">Netlify</span>
+					</div>
+				</div>
+				<a href="https://github.com/jorismi/jorisPortfolio" class="linksContainer">SEE CODE</a>
 			</div>
 			<div class="projectCard">
 				<div class="cardImageContainer"><img src="assets/projectsImages/GUIPython.png"
@@ -152,37 +192,16 @@
 					to
 					work more on <b>open source projects</b> on Github.</p>
 				<div class="technoContainer">
-					<div class="tooltip"><img src="assets/icons/pythonIcon.png"></img><span
-							class="tooltiptext">Python</span></div>
-					<div class="tooltip"><img src="assets/icons/githubIcon.png"></img><span
-							class="tooltiptext">Github</span></div>
+					<div class="tooltip">
+						<img src="assets/icons/pythonIcon.png"></img>
+						<span class="tooltiptext">Python</span>
+					</div>
+					<div class="tooltip">
+						<img src="assets/icons/githubIcon.png"></img>
+						<span class="tooltiptext">Github</span>
+					</div>
 				</div>
 				<a href="https://github.com/pierreminiggio/vegas-rendering-queue" class="linksContainer">SEE CODE</a>
-			</div>
-			<div class="projectCard">
-				<div class="cardImageContainer"><img src="assets/projectsImages/timePlank1.png"
-						alt="Screenshots of my fitness timer mobile app">
-				</div>
-				<h1>Fitness Timer</h1>
-				<p>To stay in shape for my Badminton hobby, I casually make fitness sessions. I used my mobile timer,
-					but it
-					was not enough. For example, I need to do 3 repetitions of 30 sec and then one rest repetition of 45
-					sec, 3 times in a row.<br><br>
-					I wanted to learn to developp mobile app so I choose <b>Ionic framework</b> to program my custom
-					timer.
-					Ionic use <b>Typescript</b>, which was perfect because I was learning <b>Angular</b> at the same
-					time.<br><br>
-					I didn't go until the step of publishing my app onto Google Play store, it's why you can see
-					only the code on Github and not the mobile app in action.</p>
-				<div class="technoContainer">
-					<div class="tooltip"><img src="assets/icons/ionicIcon.png"></img><span
-							class="tooltiptext">Ionic</span>
-					</div>
-					<div class="tooltip"><img src="assets/icons/typeScriptIcon.png"></img><span
-							class="tooltiptext">TypeScript</span>
-					</div>
-				</div>
-				<a href="https://codepen.io/jorismi/pen/qBNNBze" class="linksContainer">SEE CODE</a>
 			</div>
 			<div class="projectCard">
 				<div class="cardImageContainer"><img src="assets/projectsImages/SlackBot.png"
@@ -201,12 +220,16 @@
 					Sunday to
 					call <b>Slack API</b> for posting messages.</p>
 				<div class="technoContainer">
-					<div class="tooltip"><img src="assets/icons/nodeJSIcon.png"></img><span
-							class="tooltiptext">NodeJS</span></div>
-					<div class="tooltip"><img src="assets/icons/herokuIcon.png"></img><span
-							class="tooltiptext">Heroku</span></div>
+					<div class="tooltip">
+						<img src="assets/icons/nodeJSIcon.png"></img>
+						<span class="tooltiptext">NodeJS</span>
+					</div>
+					<div class="tooltip">
+						<img src="assets/icons/herokuIcon.png"></img>
+						<span class="tooltiptext">Heroku</span>
+					</div>
 				</div>
-				<a href="https://codepen.io/jorismi/pen/qBNNBze" class="linksContainer">SEE IN ACTION</a>
+				<a href="https://github.com/jorismi/quiVientCeSoir_SlackBot" class="linksContainer">SEE CODE</a>
 			</div>
 		</div>
 	</section>

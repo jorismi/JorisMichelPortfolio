@@ -1,5 +1,6 @@
 $borderRadiusCard: 1rem;
 $breakpointMobile: 800px;
+$boxShadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
 
 body{
 	margin: 0;
@@ -14,10 +15,8 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-image: url(assets/parallaxHeaderImages/bgHeader.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
 	margin: 0 0 5rem 0;
+
 	&:before{
 		content: '';
 		position: absolute;
@@ -28,6 +27,10 @@ body{
 		z-index: 10000;
 	}
 
+	.bg{
+		border-radius: 0;
+	}
+	
 	img {
 		overflow: hidden;
 		position: absolute;
@@ -35,7 +38,7 @@ body{
 		object-fit: cover;
 		pointer-events: none;
 		border-radius: $borderRadiusCard;
-		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+		box-shadow: $boxShadow;
 	}
 
 	@media (min-width: 1440px) { 
@@ -45,44 +48,62 @@ body{
 			width: 50vw;
 			object-fit: scale-down;
 			pointer-events: none;
+			border-radius: $borderRadiusCard;
+			box-shadow: $boxShadow;
 		}
 	}
 
-	#vsCodeLayer {
-		transform: rotate(15deg);
-		bottom: 25%;
-		left: 5%;
-		z-index: 6;
+
+
+	#skyLayer{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: -2;
 	}
-	
-	#sqlDevLayer {
-		transform: rotate(-15deg);
-		bottom: 25%;
-		right: 5%;
-		z-index: 5;
+
+	#titleHeader {
+		position: absolute;
+		color: white;
+		font-size: 7vw;
+		z-index: -1;
+		text-align: center;
+		bottom: 50%;
 	}
-	
+
+	#forestLayer{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: 3;
+	}
+
 	#jenkinsLayer {
 		transform: rotate(-10deg);
-		bottom: 50%;
+		bottom: 60%;
 		left: 5%;
-		z-index: 2;
+		z-index: 4;
 	}
 
 	#kibanaLayer {
 		transform: rotate(10deg);
-		bottom: 50%;
+		bottom: 60%;
 		right: 5%;
-		z-index: 3;
+		z-index: 5;
 	}
 
-	#titleHeader {
-		position: fixed;
-		color: white;
-		font-size: 10vh;
-		top: 30vh;
-		z-index: 1;
-		text-align: center;
+	#sqlDevLayer {
+		transform: rotate(-15deg);
+		bottom: 40%;
+		right: 5%;
+		z-index: 6;
+	}
+
+	#vsCodeLayer {
+		transform: rotate(15deg);
+		bottom: 40%;
+		left: 5%;
+		z-index: 7;
 	}
 
 	#scrollIndicator {
@@ -140,7 +161,7 @@ body{
     margin: 5rem auto;
     background-color: white;
     border-radius: 0.5rem;
-	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+	box-shadow: $boxShadow;
 	font-size: 1.8vw;
 	text-align: center;
 
@@ -212,7 +233,7 @@ body{
 	display: grid;
 	grid-template-rows: 15rem 3rem 1fr 5rem 3rem;
 	border-radius: $borderRadiusCard;
-	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+	box-shadow: $boxShadow;
 	background-color: white;
 	.cardImageContainer {
 		img {
@@ -319,92 +340,99 @@ body{
 		margin: 10vh auto;
 		background-color: white;
 		border-radius: 1%;
-		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
 		display: grid;
-		grid-gap: 2rem;
 		grid-template-columns: 15vh 1fr;
 		grid-template-rows: 1fr 100%;
 		grid-template-areas:
-		"header header"
-		"links contactMeForm";
-
-	h1 {
-		grid-area: header;
-		justify-self: center;
-	}
-
-	.myContactLinks {
-		grid-area: links;
-		text-align: center;
-		.circle {
-			text-decoration: none;
-			display: inline-block;
-			width: 10vh;
-			height: 10vh;
-			line-height: 10vh;
-			border-radius: 50%;
-			font-weight: bold;
-			margin: 0.5vh 0;
-			color: black;
+			"header header"
+			"links contactMeForm";
+		box-shadow: $boxShadow;
+		
+		h1 {
+			grid-area: header;
+			justify-self: center;
 		}
 
-		.circle:nth-child(1) {
-			background: #ccf6c8;
-		}
-		.circle:nth-child(2) {
-			background: lighten(#f6830f, 15%);
-		}
-		.circle:nth-child(3) {
-			background: #fea5ad;
-		}
-		.circle:nth-child(4) {
-			background: lighten(#be8abf, 5%);
-		}
-	}
-
-	#contactMeForm {
-		grid-area: contactMeForm;
-		justify-self: center;
-
-		/* All input from form except the button send */
-		div:not(:last-child) {
-			margin: 1rem 0;
-
-			:focus {
-				outline: none;
-				background-color: lighten(lightgray, 10%);
-			}
-
-			input,
-			textarea {
-				border: none;
-				border-radius: 25px;
-				background-color: lightgray;
-				height: 4vh;
-				width: 50vw;
-				text-indent: 1rem;
-			}
-
-			textarea {
-				resize: none;
-				height: 20vh;
-				padding-top: 1rem;
-			}
-		}
-
-		/* button send */
-		div:last-child {
+		.myContactLinks {
+			grid-area: links;
 			text-align: center;
+			margin-left: 3vh;
 
-			input {
+			.circle {
+				text-decoration: none;
+				display: inline-block;
+				width: 10vh;
+				height: 10vh;
+				line-height: 10vh;
+				border-radius: 50%;
 				font-weight: bold;
-				padding: 2vw;
-				border-radius: 25px;
-				border: none;
-				background-color: #ccf6c8;
+				margin: 15% 0;
+				color: black;
+			}
+
+			.circle:nth-child(1) {
+				background: #ccf6c8;
+			}
+			.circle:nth-child(2) {
+				background: lighten(#f6830f, 15%);
+			}
+			.circle:nth-child(3) {
+				background: #fea5ad;
+			}
+			.circle:nth-child(4) {
+				background: lighten(#be8abf, 5%);
 			}
 		}
-	}
+
+		#contactMeForm {
+			grid-area: contactMeForm;
+			justify-self: center;
+
+			/* All input from form except the button send */
+			div:not(:last-child) {
+				margin: 1rem 0;
+
+				:focus {
+					outline: none;
+					background-color: lighten(lightgray, 10%);
+				}
+
+				input,
+				textarea {
+					border: none;
+					border-radius: 25px;
+					background-color: lightgray;
+					height: 4vh;
+					width: 50vw;
+					text-indent: 1rem;
+				}
+
+				textarea {
+					resize: none;
+					height: 20vh;
+					padding-top: 1rem;
+				}
+			}
+
+			/* button send */
+			div:last-child {
+				text-align: center;
+				
+				input {
+					cursor:pointer;
+					box-shadow: $boxShadow;
+					font-weight: bold;
+					padding: 2vw;
+					border-radius: 2vw;
+					border: none;
+					background-color: #ccf6c8;
+
+					&:active{
+						outline: none;
+					}
+				}
+			}
+		}
 	}
 }  
 
@@ -425,9 +453,6 @@ body{
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-image: url(assets/parallaxHeaderImages/bgHeader.jpg);
-		background-size: cover;
-		background-repeat: no-repeat;
 		margin: 0 0 5rem 0;
 		&:before{
 			content: '';
@@ -439,16 +464,8 @@ body{
 			z-index: 10000;
 		}
 	
-		img {
+		img:not(.bg) {
 			display: none;
-		}
-
-		#titleHeader {
-			position: fixed;
-			top: 20%;
-			color: white;
-			font-size: 5vh;
-			text-align: center;
 		}
 
 		#scrollIndicator {

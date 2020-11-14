@@ -1,8 +1,12 @@
 /* TODO LIST */
-/* TODO header : Make text disappear behind tree */
-/* TODO AboutMe section : Improve mobile design */
-/* TODO Check portfolio behavior when bad internet connection */
+/* TODO Contact section : fix mobile design (Make links below instead of beside) */
+/* TODO Contact section : Make emailing working (POST request to nodeJS)
 
+/* TODO BONUS : Make aboutMe and Project card appear and dissapear behind sections
+/* TODO BONUS : Check portfolio behavior when bad internet connection */
+/* TODO BONUS Projects section : add multiple images */
+/* TODO BONUS : add a photography gallery */
+/* TODO BONUS : add informations about this website (vanilla JS, firebase, SCSS) */
 
 let vsCodeLayer = document.getElementById("vsCodeLayer");
 let sqlDevLayer = document.getElementById("sqlDevLayer");
@@ -13,22 +17,24 @@ let scrollIndicator = document.getElementById("scrollIndicator");
 
 let coefTranslateAnimationHeaderParallax = 0.1;
 let coefFastTranslateAnimationHeaderParallax = 0.3;
-let coefScaleAnimationHeaderParallax = 0.001;
+let coefScaleAnimationHeaderParallax = 0.002;
 let coefBlurAnimationHeaderParallax = 0.005;
 
 
-window.addEventListener('resize', resizing, false);
+//window.addEventListener('resize', resizing, false);
 
-function resizing() {
+/*function resizing() {
     titleHeaderAnimation();
-}
+}*/
 
 function titleHeaderAnimation() {
-    if (window.matchMedia("(min-width: 800px)").matches) {
-        titleHeader.style.opacity = (100 - window.scrollY * 0.1) + "%";
-    } else {
-        titleHeader.style.opacity = (100 - window.scrollY * 0.2) + "%";
-    }
+    //if (window.matchMedia("(min-width: 800px)").matches) {
+        //titleHeader.style.opacity = (100 - window.scrollY * 0.05) + "%";
+        //titleHeader.style.transform = "translateY("+window.scrollY * 0.08+"vh)";
+    //} else {
+        //titleHeader.style.opacity = (100 - window.scrollY * 0.2) + "%";
+        //titleHeader.style.transform = "translateY("+window.scrollY * 0.08+"vh)";
+    //}
 }
 
 window.addEventListener("scroll", function () {
@@ -48,5 +54,8 @@ window.addEventListener("scroll", function () {
     kibanaLayer.style.transform = "translate(" + (value * coefTranslateAnimationHeaderParallax) + "%," + (-value * coefTranslateAnimationHeaderParallax) + "%) rotate(10deg) scale(" + (1 + value * coefScaleAnimationHeaderParallax) + ")";
     kibanaLayer.style.filter = "blur(" + (value * coefBlurAnimationHeaderParallax) + "px)";
 
-    titleHeaderAnimation();
+    titleHeader.style.opacity = (100 - window.scrollY * 0.05) + "%";
+    titleHeader.style.transform = "translateY("+window.scrollY * 0.08+"vh)";
+
+    //titleHeaderAnimation();
 });

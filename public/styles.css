@@ -10,9 +10,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(assets/parallaxHeaderImages/bgHeader.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
   margin: 0 0 5rem 0; }
   #headerSection:before {
     content: '';
@@ -22,6 +19,8 @@ body {
     height: 200px;
     background: linear-gradient(to top, #68a4ca, transparent);
     z-index: 10000; }
+  #headerSection .bg {
+    border-radius: 0; }
   #headerSection img {
     overflow: hidden;
     position: absolute;
@@ -36,34 +35,46 @@ body {
       position: absolute;
       width: 50vw;
       object-fit: scale-down;
-      pointer-events: none; } }
-  #headerSection #vsCodeLayer {
-    transform: rotate(15deg);
-    bottom: 25%;
-    left: 5%;
-    z-index: 6; }
-  #headerSection #sqlDevLayer {
-    transform: rotate(-15deg);
-    bottom: 25%;
-    right: 5%;
-    z-index: 5; }
+      pointer-events: none;
+      border-radius: 1rem;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35); } }
+  #headerSection #skyLayer {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2; }
+  #headerSection #titleHeader {
+    position: absolute;
+    color: white;
+    font-size: 7vw;
+    z-index: -1;
+    text-align: center;
+    bottom: 50%; }
+  #headerSection #forestLayer {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 3; }
   #headerSection #jenkinsLayer {
     transform: rotate(-10deg);
-    bottom: 50%;
+    bottom: 60%;
     left: 5%;
-    z-index: 2; }
+    z-index: 4; }
   #headerSection #kibanaLayer {
     transform: rotate(10deg);
-    bottom: 50%;
+    bottom: 60%;
     right: 5%;
-    z-index: 3; }
-  #headerSection #titleHeader {
-    position: fixed;
-    color: white;
-    font-size: 10vh;
-    top: 30vh;
-    z-index: 1;
-    text-align: center; }
+    z-index: 5; }
+  #headerSection #sqlDevLayer {
+    transform: rotate(-15deg);
+    bottom: 40%;
+    right: 5%;
+    z-index: 6; }
+  #headerSection #vsCodeLayer {
+    transform: rotate(15deg);
+    bottom: 40%;
+    left: 5%;
+    z-index: 7; }
   #headerSection #scrollIndicator {
     bottom: 10vh;
     margin: 0 auto;
@@ -244,18 +255,18 @@ body {
   margin: 10vh auto;
   background-color: white;
   border-radius: 1%;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
   display: grid;
-  grid-gap: 2rem;
   grid-template-columns: 15vh 1fr;
   grid-template-rows: 1fr 100%;
-  grid-template-areas: "header header" "links contactMeForm"; }
+  grid-template-areas: "header header" "links contactMeForm";
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35); }
   #contactMeSection #contactMeContainer h1 {
     grid-area: header;
     justify-self: center; }
   #contactMeSection #contactMeContainer .myContactLinks {
     grid-area: links;
-    text-align: center; }
+    text-align: center;
+    margin-left: 3vh; }
     #contactMeSection #contactMeContainer .myContactLinks .circle {
       text-decoration: none;
       display: inline-block;
@@ -264,7 +275,7 @@ body {
       line-height: 10vh;
       border-radius: 50%;
       font-weight: bold;
-      margin: 0.5vh 0;
+      margin: 15% 0;
       color: black; }
     #contactMeSection #contactMeContainer .myContactLinks .circle:nth-child(1) {
       background: #ccf6c8; }
@@ -299,11 +310,15 @@ body {
     #contactMeSection #contactMeContainer #contactMeForm div:last-child {
       text-align: center; }
       #contactMeSection #contactMeContainer #contactMeForm div:last-child input {
+        cursor: pointer;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
         font-weight: bold;
         padding: 2vw;
-        border-radius: 25px;
+        border-radius: 2vw;
         border: none;
         background-color: #ccf6c8; }
+        #contactMeSection #contactMeContainer #contactMeForm div:last-child input:active {
+          outline: none; }
 
 @media (max-width: 800px) {
   .projectsContainer {
@@ -320,9 +335,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(assets/parallaxHeaderImages/bgHeader.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
     margin: 0 0 5rem 0; }
     #headerSection:before {
       content: '';
@@ -332,13 +344,7 @@ body {
       height: 50px;
       background: linear-gradient(to top, #68a4ca, transparent);
       z-index: 10000; }
-    #headerSection img {
+    #headerSection img:not(.bg) {
       display: none; }
-    #headerSection #titleHeader {
-      position: fixed;
-      top: 20%;
-      color: white;
-      font-size: 5vh;
-      text-align: center; }
     #headerSection #scrollIndicator {
       display: none; } }
