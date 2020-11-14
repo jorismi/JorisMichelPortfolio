@@ -3,10 +3,11 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const nodemailer = require('nodemailer');
+const axios = require('axios');
 
 //to make it work you need gmail account
-const gmailEmail = functions.config().gmail.login;
-const gmailPassword = functions.config().gmail.pass;
+//const gmailEmail = functions.config().gmail.login;
+//const gmailPassword = functions.config().gmail.pass;
 
 admin.initializeApp();
 
@@ -14,18 +15,21 @@ admin.initializeApp();
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: gmailEmail,
-        pass: gmailPassword
+        user: "micheljoris31@gmail.com",
+        pass: "Iiossoma31!"
     }
 });
 
 //Creating a Firebase Cloud Function
 exports.emailSender = functions.https.onRequest((req, res) => {
+    console.log("TOTO");
+
+    //res.status(200).send("<!doctype html><head><title>Time</title> </head><body> "+  req.body +"</body></html>");
     //Defining mailOptions
     const mailOptions = {
-        from: gmailEmail, //Adding sender's email
+        from: 'micheljoris31@gmail.com', //Adding sender's email
         to: 'jorismichel@hotmail.fr', //Getting recipient's email by query string
-        subject: 'Email Sent via Firebase', //Email subject
+        subject: "subject", //Email subject
         html: '<b>Sending emails with Firebase is easy!</b>' //Email content in HTML
     };
 
@@ -34,6 +38,19 @@ exports.emailSender = functions.https.onRequest((req, res) => {
         if (err) {
             return res.send(err.toString());
         }
-        return res.send('Email sent succesfully');
+        return res.status('200').send('Email sent succesfully');
     });
 });
+
+/*export const sendMail = async contactMeFormData => {
+    try {
+        const res = await axios.post("http://localhost:5001/jorismichelportfolio/us-central1/emailSender", contactMeFormData);
+        const sendedMail = res.data;
+
+        console.log("Sended a new mail!", sendedMail);
+
+        return sendedMail;
+    } catch (e) {
+        console.error(e);
+    }
+};*/
