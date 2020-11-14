@@ -30,7 +30,7 @@ body{
 	.bg{
 		border-radius: 0;
 	}
-	
+
 	img {
 		overflow: hidden;
 		position: absolute;
@@ -329,11 +329,10 @@ body{
 	}
 }
 
-#contactMeSection {
-	height: 90vh;
-}
 
 #contactMeSection {
+	height: 80vh;
+
 	#contactMeContainer {
 		width: 70vw;
 		height: 70vh;
@@ -409,7 +408,7 @@ body{
 
 				textarea {
 					resize: none;
-					height: 20vh;
+					height: 25vh;
 					padding-top: 1rem;
 				}
 			}
@@ -471,5 +470,116 @@ body{
 		#scrollIndicator {
 			display: none;
 		}
-	}	
+	}
+
+	#contactMeSection {
+		height: 80vh;
+	
+		#contactMeContainer {
+			width: 90vw;
+			height: 150vw;
+			margin: 10vw auto;
+			background-color: white;
+			border-radius: 1%;
+			display: grid;
+			grid-template-rows: 10% 70% 20%;
+			grid-template-columns: 100%;
+			box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+			grid-template-areas:
+				"header"
+				"contactMeForm"
+				"links";
+			
+			h1 {
+				grid-area: header;
+				margin: 1rem 0 0 0;
+				justify-self: center;
+			}
+	
+			.myContactLinks {
+				grid-area: links;
+				text-align: center;
+				justify-self: center;
+				margin: 0;
+				align-self: center;
+
+				.circle {
+					text-decoration: none;
+					display: inline-block;
+					width: 20vw;
+					height: 20vw;
+					line-height: 20vw;
+					border-radius: 50%;
+					font-weight: bold;
+					margin: 0 auto;
+					color: black;
+					font-size: 3vw;
+				}
+	
+				.circle:nth-child(1) {
+					background: #ccf6c8;
+				}
+				.circle:nth-child(2) {
+					background: lighten(#f6830f, 15%);
+				}
+				.circle:nth-child(3) {
+					background: #fea5ad;
+				}
+				.circle:nth-child(4) {
+					background: lighten(#be8abf, 5%);
+				}
+			}
+	
+			#contactMeForm {
+				grid-area: contactMeForm;
+				justify-self: center;
+				width: 90%;
+
+				/* All input from form except the button send */
+				div:not(:last-child) {
+					margin: 1rem 0;
+	
+					:focus {
+						outline: none;
+						background-color: lighten(lightgray, 10%);
+					}
+	
+					input,
+					textarea {
+						border: none;
+						border-radius: 25px;
+						background-color: lightgray;
+						height: 10vw; 
+						width: 100%;
+						text-indent: 1rem;
+					}
+	
+					textarea {
+						resize: none;
+						height: 40%;
+						padding-top: 1rem;
+					}
+				}
+	
+				/* button send */
+				div:last-child {
+					text-align: center;
+					
+					input {
+						cursor:pointer;
+						box-shadow: $boxShadow;
+						font-weight: bold;
+						padding: 2vw;
+						border-radius: 2vw;
+						border: none;
+						background-color: #ccf6c8;
+	
+						&:active{
+							outline: none;
+						}
+					}
+				}
+			}
+		}
+	}  
 }
