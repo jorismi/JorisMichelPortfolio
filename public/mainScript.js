@@ -1,5 +1,4 @@
 /* TODO LIST */
-/* TODO Contact section : Make emailing working (POST request to nodeJS)
 
 /* TODO BONUS : Make aboutMe and Project card appear and dissapear behind sections
 /* TODO BONUS : Check portfolio behavior when bad internet connection */
@@ -7,6 +6,8 @@
 /* TODO BONUS : add a photography gallery */
 /* TODO BONUS : add informations about this website (vanilla JS, firebase, SCSS) */
 /* TODO BONUS project section : make 1 button see code and 1 button see in action for project */
+/* TODO Contact me section : 
+/* TODO Contact me section : double check the sanityzing process, exemple message I love to do evil <img src="http://unsplash.it/100/100?random" onload="alert('you got hacked');" /> */
 
 let vsCodeLayer = document.getElementById("vsCodeLayer");
 let sqlDevLayer = document.getElementById("sqlDevLayer");
@@ -14,21 +15,13 @@ let jenkinsLayer = document.getElementById("jenkinsLayer");
 let kibanaLayer = document.getElementById("kibanaLayer");
 let titleHeader = document.getElementById("titleHeader");
 let scrollIndicator = document.getElementById("scrollIndicator");
+let contactMeForm = document.getElementById("contactMeForm");
 
 let coefTranslateAnimationHeaderParallax = 0.1;
 let coefFastTranslateAnimationHeaderParallax = 0.3;
 let coefScaleAnimationHeaderParallax = 0.002;
 let coefBlurAnimationHeaderParallax = 0.005;
 
-
-//window.addEventListener('resize', resizing, false);
-
-/*function resizing() {
-    titleHeaderAnimation();
-}*/
-
-
-let contactMeForm = document.getElementById("contactMeForm");
 
 var sanitizeHTML = function (str) {
 	var temp = document.createElement('div');
@@ -55,29 +48,15 @@ const formEvent = contactMeForm.addEventListener('submit', async event => {
     }));
     xhr.onload = function () {
         //var data = JSON.parse(this.responseText);
-        console.log('DONE: ', xhr.status);
-        console.log("retour reçu!");
-        //console.log(data);
+        console.log('return status sending mail function : ', xhr.status);
     };
-    //const sendedMail = await sendMail(contactMeFormData);
-    //addTodosToDOM(addedTodo);
 });
 
-function sendMail() {
-    console.log("TOTO");
+//window.addEventListener('resize', resizing, false);
 
-    //http://localhost:5001/jorismichelportfolio/us-central1/emailSender
-    axios.post('https://us-central1-jorismichelportfolio.cloudfunctions.net/emailSender', {
-        firstName: 'Finn',
-        lastName: 'Williams'
-    }).then((response) => {
-        console.log(response.data);
-        console.log(response.status);
-        console.log(response.statusText);
-        console.log(response.headers);
-        console.log(response.config);
-    });
-}
+/*function resizing() {
+    titleHeaderAnimation();
+}*/
 
 function titleHeaderAnimation() {
     //if (window.matchMedia("(min-width: 800px)").matches) {
