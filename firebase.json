@@ -11,6 +11,10 @@
     ],
     "rewrites": [
       {
+        "source": "/emailSender",
+        "function": "emailSender"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }

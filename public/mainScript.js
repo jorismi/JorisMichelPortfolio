@@ -6,7 +6,7 @@
 /* TODO BONUS Projects section : add multiple images */
 /* TODO BONUS : add a photography gallery */
 /* TODO BONUS : add informations about this website (vanilla JS, firebase, SCSS) */
-
+/* TODO BONUS project section : make 1 button see code and 1 button see in action for project */
 
 let vsCodeLayer = document.getElementById("vsCodeLayer");
 let sqlDevLayer = document.getElementById("sqlDevLayer");
@@ -30,6 +30,12 @@ let coefBlurAnimationHeaderParallax = 0.005;
 
 let contactMeForm = document.getElementById("contactMeForm");
 
+var sanitizeHTML = function (str) {
+	var temp = document.createElement('div');
+	temp.textContent = str;
+	return temp.innerHTML;
+};
+
 const formEvent = contactMeForm.addEventListener('submit', async event => {
     event.preventDefault();
 
@@ -38,38 +44,30 @@ const formEvent = contactMeForm.addEventListener('submit', async event => {
     let contactMeSubject = document.getElementById("contactMeSubject").value;
     let contactMeMessage = document.getElementById("contactMeMessage").value;
 
-
-    const contactMeFormData = {
-        contactMeName,
-        contactMeMail,
-        contactMeSubject,
-        contactMeMessage
-    };
-
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://us-central1-jorismichelportfolio.cloudfunctions.net/emailSender", true);
+    xhr.open("POST", "/emailSender", true);
     xhr.setRequestHeader('Content-Type', 'application/json');
-    console.log("TUTU!!");
     xhr.send(JSON.stringify({
-        name: "contactMeName",
-        email: "contactMeMail",
-        subject: "contactMeSubject",
-        message: "contactMeMessage"
+        name: sanitizeHTML(contactMeName),
+        email: sanitizeHTML(contactMeMail),
+        subject: sanitizeHTML(contactMeSubject),
+        message: sanitizeHTML(contactMeMessage)
     }));
     xhr.onload = function () {
-        var data = JSON.parse(this.responseText);
+        //var data = JSON.parse(this.responseText);
+        console.log('DONE: ', xhr.status);
         console.log("retour reçu!");
-        console.log(data);
+        //console.log(data);
     };
     //const sendedMail = await sendMail(contactMeFormData);
     //addTodosToDOM(addedTodo);
 });
 
-/*function sendMail() {
+function sendMail() {
     console.log("TOTO");
 
     //http://localhost:5001/jorismichelportfolio/us-central1/emailSender
-    axios.post('http://localhost:5001/jorismichelportfolio/us-central1/emailSender', {
+    axios.post('https://us-central1-jorismichelportfolio.cloudfunctions.net/emailSender', {
         firstName: 'Finn',
         lastName: 'Williams'
     }).then((response) => {
@@ -79,7 +77,7 @@ const formEvent = contactMeForm.addEventListener('submit', async event => {
         console.log(response.headers);
         console.log(response.config);
     });
-}*/
+}
 
 function titleHeaderAnimation() {
     //if (window.matchMedia("(min-width: 800px)").matches) {
