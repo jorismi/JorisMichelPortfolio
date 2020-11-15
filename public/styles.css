@@ -309,15 +309,20 @@ body {
       #contactMeSection #contactMeContainer #contactMeForm div:last-child {
         text-align: center; }
         #contactMeSection #contactMeContainer #contactMeForm div:last-child input {
+          color: white;
+          background-color: #168ED1;
           cursor: pointer;
           box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
           font-weight: bold;
           padding: 2vw;
           border-radius: 2vw;
           border: none;
-          background-color: #ccf6c8; }
+          outline: none;
+          transition: all 0.5s ease-in-out; }
           #contactMeSection #contactMeContainer #contactMeForm div:last-child input:active {
             outline: none; }
+          #contactMeSection #contactMeContainer #contactMeForm div:last-child input:hover {
+            background-color: #31a7e9; }
 
 @media (max-width: 800px) {
   .projectsContainer {

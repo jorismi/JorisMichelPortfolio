@@ -16,6 +16,7 @@ let kibanaLayer = document.getElementById("kibanaLayer");
 let titleHeader = document.getElementById("titleHeader");
 let scrollIndicator = document.getElementById("scrollIndicator");
 let contactMeForm = document.getElementById("contactMeForm");
+let contactMeSend = document.getElementById("contactMeSend");
 
 let coefTranslateAnimationHeaderParallax = 0.1;
 let coefFastTranslateAnimationHeaderParallax = 0.3;
@@ -24,13 +25,17 @@ let coefBlurAnimationHeaderParallax = 0.005;
 
 
 var sanitizeHTML = function (str) {
-	var temp = document.createElement('div');
-	temp.textContent = str;
-	return temp.innerHTML;
+    var temp = document.createElement('div');
+    temp.textContent = str;
+    return temp.innerHTML;
 };
 
 const formEvent = contactMeForm.addEventListener('submit', async event => {
     event.preventDefault();
+
+    contactMeSend.value = "In progress...";
+    contactMeSend.disabled = true;
+    contactMeSend.style.cursor = "wait";
 
     let contactMeName = document.getElementById("contactMeName").value;
     let contactMeMail = document.getElementById("contactMeMail").value;
@@ -40,18 +45,32 @@ const formEvent = contactMeForm.addEventListener('submit', async event => {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/emailSender", true);
     xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onloadend = function () {
+        //console.log('return status sending mail function : ', xhr.status);
+        contactMeSend.style.cursor = "default";
+        if (xhr.status == "200") {
+            contactMeSend.style.background = "green";
+            contactMeSend.value = "Thanks for your message";
+        } else {
+            contactMeSend.style.background = "red";
+            contactMeSend.value = "Error, please try again";
+        }
+        myVar = setTimeout(resetSendingButton, 5000);
+    }
     xhr.send(JSON.stringify({
         name: sanitizeHTML(contactMeName),
         email: sanitizeHTML(contactMeMail),
         subject: sanitizeHTML(contactMeSubject),
         message: sanitizeHTML(contactMeMessage)
     }));
-    xhr.onload = function () {
-        //var data = JSON.parse(this.responseText);
-        console.log('return status sending mail function : ', xhr.status);
-    };
 });
 
+function resetSendingButton() {
+    contactMeSend.style.background = "#168ED1";
+    contactMeSend.value = "SEND MAIL";
+    contactMeSend.disabled = false;
+    contactMeSend.style.cursor = "pointer";
+}
 //window.addEventListener('resize', resizing, false);
 
 /*function resizing() {

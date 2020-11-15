@@ -418,16 +418,23 @@ body{
 				text-align: center;
 				
 				input {
+					color: white;
+					background-color: #168ED1;
 					cursor:pointer;
 					box-shadow: $boxShadow;
 					font-weight: bold;
 					padding: 2vw;
 					border-radius: 2vw;
 					border: none;
-					background-color: #ccf6c8;
+					outline: none;
+					transition: all 0.5s ease-in-out;
 
 					&:active{
 						outline: none;
+					}
+
+					&:hover {
+						background-color: lighten(#168ED1, 10%);
 					}
 				}
 			}

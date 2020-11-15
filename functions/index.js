@@ -8,7 +8,7 @@ const cors = require('cors')({ origin: true });
 
 //to make it work you need gmail account
 const gmailEmail = functions.config().gmail.login;
-const gmailPassword = functions.config().gmail.pass;
+const gmailPassword =  functions.config().gmail.pass;
 
 admin.initializeApp();
 
@@ -25,11 +25,12 @@ const transporter = nodemailer.createTransport({
 exports.emailSender = functions.https.onRequest((req, res) => {
     cors(req, res, () => {
         const mailOptions = {
-            from: "micheljoris31@gmail.com", 
+            from: gmailEmail, 
             to: "jorismichel@hotmail.fr",
-            subject: "Mail reçu depuis le portfolio ==> " + req.body.subject,
+            subject: "Mail reçu depuis le portfolio!",
             html: "<p> Nom de l'expediteur : "+req.body.name+"</p>" + 
             "<p> Mail de l'expediteur : "+req.body.email+"</p>" + 
+            "<p> Sujet de l'expediteur : "+req.body.subject+"</p>" + 
             "<p> Message de l'expediteur : "+req.body.message+"</p>"
         };
 
