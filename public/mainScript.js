@@ -1,4 +1,5 @@
 /* TODO LIST */
+/* TODO contactMe section: make OAuth2 authentification for sending mail. 
 
 /* TODO BONUS : Make aboutMe and Project card appear and dissapear behind sections
 /* TODO BONUS : Check portfolio behavior when bad internet connection */
@@ -6,7 +7,7 @@
 /* TODO BONUS : add a photography gallery */
 /* TODO BONUS : add informations about this website (vanilla JS, firebase, SCSS) */
 /* TODO BONUS project section : make 1 button see code and 1 button see in action for project */
-/* TODO Contact me section : 
+/* TODO Contact me section : Make better HTTP request with axios or promises rather than AJAX
 /* TODO Contact me section : double check the sanityzing process, exemple message I love to do evil <img src="http://unsplash.it/100/100?random" onload="alert('you got hacked');" /> */
 
 let vsCodeLayer = document.getElementById("vsCodeLayer");
@@ -36,6 +37,7 @@ const formEvent = contactMeForm.addEventListener('submit', async event => {
     contactMeSend.value = "In progress...";
     contactMeSend.disabled = true;
     contactMeSend.style.cursor = "wait";
+    contactMeSend.style.background = "#E86826";
 
     let contactMeName = document.getElementById("contactMeName").value;
     let contactMeMail = document.getElementById("contactMeMail").value;

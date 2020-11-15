@@ -3,7 +3,6 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const nodemailer = require('nodemailer');
-const axios = require('axios');
 const cors = require('cors')({ origin: true });
 
 //to make it work you need gmail account
