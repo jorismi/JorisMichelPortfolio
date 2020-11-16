@@ -7,6 +7,49 @@ body{
 	background: linear-gradient(to bottom, #68a4ca 150vh,#7fc3d4);
 }
 
+#loadingScreen{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 1;
+	z-index: 101;
+	transition: opacity 2s ease-in-out;
+	text-align: center;
+
+	h1{
+		font-size: 5vh;
+		color: white;
+		position: fixed;
+		top: 60%;
+		width: 100%;
+	}
+
+	// Temporary solution copied from https://www.w3schools.com/howto/howto_css_loader.asp
+	.loader {
+		border-radius: 50%;
+		border-top: 2vh solid #ccf6c8;
+		border-right: 2vh solid #f9a959;
+		border-bottom: 2vh solid #fea5ad;
+		border-left: 2vh solid #c79ac8;
+		width: 10vh;
+		height: 10vh;
+		-webkit-animation: spin 2s linear infinite;
+		animation: spin 2s linear infinite;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		margin-top: -10vh;
+		margin-left: -10vh;
+	}
+
+	@keyframes spin {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+	}
+}
+
 #headerSection {
 	position: relative;
 	width: 100%;
@@ -24,7 +67,7 @@ body{
 		width: 100%;
 		height: 200px;
 		background: linear-gradient(to top,  #68a4ca, transparent);
-		z-index: 10000;
+		z-index: 100;
 	}
 
 	.bg{
@@ -52,7 +95,6 @@ body{
 			box-shadow: $boxShadow;
 		}
 	}
-
 
 
 	#skyLayer{
@@ -114,7 +156,7 @@ body{
 		min-height: 5rem;
 		border-radius: 35px;
 		box-shadow: inset 0 0 0 0.1rem #fff;
-		z-index: 9999;
+		z-index: 99;
 		opacity: 0;
 		animation: 1s 2s 1 ease-in-out forwards fadeIn;
 
@@ -442,6 +484,26 @@ body{
 }  
 
 @media (max-width: $breakpointMobile) { 
+
+	#loadingScreen{
+		.loader {
+			border: 2vh solid #f3f3f3;
+			border-radius: 50%;
+			border-top: 2vh solid  #ccf6c8;
+			border-right: 2vh solid lighten(#F6830F, 15%);
+			border-bottom: 2vh solid #fea5ad;
+			border-left: 2vh solid lighten(#be8abf, 5%);
+			width: 2vh;
+			height: 2vh;
+			-webkit-animation: spin 2s linear infinite; /* Safari */
+			animation: spin 2s linear infinite;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			margin-top: -2vh;
+			margin-left: -2vh;
+		}
+	}
 	.projectsContainer {
 		display: grid;
 		max-width: 90vw;
@@ -466,7 +528,7 @@ body{
 			width: 100%;
 			height: 50px;
 			background: linear-gradient(to top,  #68a4ca, transparent);
-			z-index: 10000;
+			z-index: 100;
 		}
 	
 		img:not(.bg) {
