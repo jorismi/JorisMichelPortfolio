@@ -196,7 +196,7 @@ body{
 
 .aboutMeCard {
 	display: grid;
-	/* grid-template-columns: 2fr 4fr; */
+	 //grid-template-columns: 2fr 4fr 1fr; 
     padding: 1rem;
     gap: 2rem;
     max-width: 80vw;
@@ -207,8 +207,10 @@ body{
 	font-size: 1.8vw;
 	text-align: center;
 
-	img {
-		width: 100%;
+	#aboutMePortrait {
+		img{
+			width: 25vw;
+		}
 	}
 
 	p {

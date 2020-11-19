@@ -151,7 +151,6 @@ body {
 
 .aboutMeCard {
   display: grid;
-  /* grid-template-columns: 2fr 4fr; */
   padding: 1rem;
   gap: 2rem;
   max-width: 80vw;
@@ -161,8 +160,8 @@ body {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
   font-size: 1.8vw;
   text-align: center; }
-  .aboutMeCard img {
-    width: 100%; }
+  .aboutMeCard #aboutMePortrait img {
+    width: 25vw; }
   .aboutMeCard p {
     font-size: 1.4vw; }
   .aboutMeCard .interline {

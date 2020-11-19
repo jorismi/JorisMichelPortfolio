@@ -1,5 +1,6 @@
 /* TODO LIST */
 /* TODO contactMe section: make OAuth2 authentification for sending mail. */
+/* TODO : add a github link! */
 
 /* TODO BONUS : Make aboutMe and Project card appear and dissapear behind sections */
 /* TODO BONUS : Check portfolio behavior when bad internet connection */
