@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  background: linear-gradient(to bottom, #68a4ca 150vh, #7fc3d4); }
+  font-family: "eurostile", sans-serif;
+  background-color: #e8f4f8; }
 
 #loadingScreen {
   position: fixed;
@@ -47,16 +48,15 @@ body {
   overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 0 0 5rem 0; }
+  align-items: center; }
   #headerSection:before {
     content: '';
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 200px;
-    background: linear-gradient(to top, #68a4ca, transparent);
-    z-index: 100; }
+    background: linear-gradient(to top, #e8f4f8, transparent);
+    z-index: 5; }
   #headerSection .bg {
     border-radius: 0; }
   #headerSection img {
@@ -92,27 +92,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 3; }
-  #headerSection #jenkinsLayer {
-    transform: rotate(-10deg);
-    bottom: 60%;
-    left: 5%;
-    z-index: 4; }
-  #headerSection #kibanaLayer {
-    transform: rotate(10deg);
-    bottom: 60%;
-    right: 5%;
-    z-index: 5; }
-  #headerSection #sqlDevLayer {
-    transform: rotate(-15deg);
-    bottom: 40%;
-    right: 5%;
-    z-index: 6; }
-  #headerSection #vsCodeLayer {
-    transform: rotate(15deg);
-    bottom: 40%;
-    left: 5%;
-    z-index: 7; }
+    z-index: 0; }
   #headerSection #scrollIndicator {
     bottom: 10vh;
     margin: 0 auto;
@@ -149,156 +129,174 @@ body {
     opacity: 0%;
     transform: translateY(275%); } }
 
-.aboutMeCard {
-  display: grid;
-  padding: 1rem;
-  gap: 2rem;
-  max-width: 80vw;
-  margin: 5rem auto;
-  background-color: white;
-  border-radius: 0.5rem;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
-  font-size: 1.8vw;
-  text-align: center; }
-  .aboutMeCard #aboutMePortrait img {
-    width: 25vw; }
-  .aboutMeCard p {
-    font-size: 1.4vw; }
-  .aboutMeCard .interline {
+#aboutMeSection {
+  position: relative;
+  margin-top: -20vh;
+  z-index: 5; }
+  #aboutMeSection .aboutMeCard {
+    display: grid;
+    padding: 4rem;
+    gap: 2rem;
+    max-width: 70vw;
+    margin: 5rem auto;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
     text-align: center; }
-  .aboutMeCard ul {
-    list-style-type: none;
-    font-size: 3vw;
-    text-align: center;
-    padding: 0;
-    margin-top: -1vw; }
-  .aboutMeCard .myContactLinks {
-    text-align: center;
-    grid-column: 1 / span 3; }
-    .aboutMeCard .myContactLinks .circle {
-      text-decoration: none;
-      display: inline-block;
-      width: 10vw;
-      height: 10vw;
-      line-height: 10vw;
-      border-radius: 50%;
-      font-weight: bold;
-      margin: 0 2vw;
-      color: black; }
-    .aboutMeCard .myContactLinks .circle:nth-child(1) {
-      background: #ccf6c8; }
-    .aboutMeCard .myContactLinks .circle:nth-child(2) {
-      background: #f9a959; }
-    .aboutMeCard .myContactLinks .circle:nth-child(3) {
-      background: #fea5ad; }
-    .aboutMeCard .myContactLinks .circle:nth-child(4) {
-      background: #c79ac8; }
+    #aboutMeSection .aboutMeCard #aboutMePortrait img {
+      width: 20vw; }
+    #aboutMeSection .aboutMeCard #aboutMeParagraph h2 {
+      font-weight: 900;
+      margin-bottom: 2rem;
+      margin-top: -2rem;
+      font-size: 3rem; }
+    #aboutMeSection .aboutMeCard #aboutMeParagraph .interline {
+      text-align: center; }
+    #aboutMeSection .aboutMeCard ul {
+      list-style-type: none;
+      font-size: 2vw;
+      text-align: center;
+      padding: 0;
+      margin-top: -1vw; }
+    #aboutMeSection .aboutMeCard .myContactLinksMobile {
+      display: none; }
+    #aboutMeSection .aboutMeCard .myContactLinks {
+      text-align: center;
+      grid-column: 1 / span 3; }
+      #aboutMeSection .aboutMeCard .myContactLinks .circle {
+        text-decoration: none;
+        display: inline-block;
+        width: 8rem;
+        height: 8rem;
+        line-height: 8rem;
+        border-radius: 50%;
+        font-weight: bold;
+        margin: 0 2vw;
+        color: black; }
+      #aboutMeSection .aboutMeCard .myContactLinks .circle:nth-child(1) {
+        background: #ccf6c8; }
+      #aboutMeSection .aboutMeCard .myContactLinks .circle:nth-child(2) {
+        background: #f9a959; }
+      #aboutMeSection .aboutMeCard .myContactLinks .circle:nth-child(3) {
+        background: #fea5ad; }
+      #aboutMeSection .aboutMeCard .myContactLinks .circle:nth-child(4) {
+        background: #c79ac8; }
 
 #projectsSection {
-  background-image: url("assets/projectsImages/projectsBg.jpg");
-  padding: 5rem 0; }
+  text-align: center;
+  margin: 20vh 0; }
+  #projectsSection h1 {
+    font-size: 2.5rem;
+    margin: 10vh 0; }
+  #projectsSection .projectsContainer {
+    display: grid;
+    max-width: 80vw;
+    margin: 0 auto;
+    grid-gap: 2rem 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr)); }
+    #projectsSection .projectsContainer .projectCard {
+      display: grid;
+      grid-template-rows: 15rem 3rem 1fr 5rem 3rem;
+      border-radius: 1rem;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+      background-color: white; }
+      #projectsSection .projectsContainer .projectCard .cardImageContainer img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem; }
+      #projectsSection .projectsContainer .projectCard h1 {
+        margin: 2rem auto; }
+      #projectsSection .projectsContainer .projectCard p {
+        margin: 4rem 1rem; }
+      #projectsSection .projectsContainer .projectCard .technoContainer {
+        margin: 0 0 1rem 0;
+        text-align: center; }
+        #projectsSection .projectsContainer .projectCard .technoContainer:before {
+          content: "";
+          border-top: 0.2rem solid #f2f4f7;
+          margin: 0.5rem 0 0.5rem 0;
+          display: block;
+          width: 100%; }
+        #projectsSection .projectsContainer .projectCard .technoContainer img {
+          max-width: 3rem;
+          max-height: 3rem;
+          margin: 0 0.5rem; }
+      #projectsSection .projectsContainer .projectCard .linksContainer {
+        background-color: #f2f4f7;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1.3rem;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem; }
 
-.projectsContainer {
-  display: grid;
-  max-width: 90vw;
-  margin: 0 auto;
-  grid-gap: 2rem 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); }
+/* Tooltip inspired by W3CSchool */
+/* https://www.w3schools.com/css/css_tooltip.asp */
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block; }
 
-.projectCard {
-  display: grid;
-  grid-template-rows: 15rem 3rem 1fr 5rem 3rem;
-  border-radius: 1rem;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
-  background-color: white;
-  /* Tooltip inspired by W3CSchool */
-  /* https://www.w3schools.com/css/css_tooltip.asp */
-  /* Tooltip container */
-  /* Tooltip text */
-  /* Show the tooltip text when you mouse over the tooltip container */ }
-  .projectCard .cardImageContainer img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem; }
-  .projectCard h1 {
-    margin: 0.5rem auto; }
-  .projectCard p {
-    margin: 1rem 0.5rem; }
-  .projectCard .technoContainer {
-    margin: 0 0 1rem 0;
-    text-align: center; }
-    .projectCard .technoContainer:before {
-      content: "";
-      border-top: 0.2rem solid #f2f4f7;
-      margin: 0.5rem 0 0.5rem 0;
-      display: block;
-      width: 100%; }
-    .projectCard .technoContainer img {
-      max-width: 3rem;
-      max-height: 3rem;
-      margin: 0 0.5rem; }
-  .projectCard .tooltip {
-    position: relative;
-    display: inline-block; }
-  .projectCard .tooltip .tooltiptext {
-    visibility: hidden;
-    font-size: 1rem;
-    width: 5rem;
-    top: 100%;
-    left: 50%;
-    margin-left: -2.5rem;
-    /* Use half of the width (120/2 = 60), to center the tooltip */
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    padding: 0.5rem 0;
-    border-radius: 0.5rem;
-    border: 1px solid black;
-    /* Position the tooltip text - see examples below! */
-    position: absolute;
-    z-index: 1; }
-  .projectCard .tooltip:hover .tooltiptext {
-    visibility: visible; }
-  .projectCard .tooltip .tooltiptext::after {
-    content: " ";
-    position: absolute;
-    bottom: 100%;
-    /* At the bottom of the tooltip */
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent transparent black transparent; }
-  .projectCard .linksContainer {
-    background-color: #f2f4f7;
-    text-align: center;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 1.3rem;
-    color: black;
-    padding: 0.5rem;
-    display: block;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem; }
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  font-size: 1rem;
+  width: 5rem;
+  top: 100%;
+  left: 50%;
+  margin-left: -2.5rem;
+  /* Use half of the width (120/2 = 60), to center the tooltip */
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+  border: 1px solid black;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1; }
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible; }
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;
+  /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent; }
 
 #contactMeSection {
-  height: 80vh; }
+  background-color: #061341; }
+  #contactMeSection h1 {
+    text-align: center;
+    font-weight: 900;
+    font-size: 4rem;
+    color: #e8f4f8;
+    padding: 10vh 0;
+    margin: 0; }
   #contactMeSection #contactMeContainer {
     width: 70vw;
-    height: 70vh;
-    margin: 10vh auto;
+    margin: 0 auto;
     background-color: white;
     border-radius: 1%;
     display: grid;
     grid-template-columns: 15vh 1fr;
-    grid-template-rows: 1fr 100%;
-    grid-template-areas: "header header" "links contactMeForm";
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35); }
-    #contactMeSection #contactMeContainer h1 {
-      grid-area: header;
-      justify-self: center; }
+    grid-template-areas: "links contactMeForm";
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+    padding: 3rem; }
+    #contactMeSection #contactMeContainer .myContactLinksMobile {
+      display: none; }
     #contactMeSection #contactMeContainer .myContactLinks {
       grid-area: links;
       text-align: center;
@@ -355,11 +353,18 @@ body {
           border-radius: 2vw;
           border: none;
           outline: none;
-          transition: all 0.5s ease-in-out; }
+          transition: all 0.5s ease-in-out;
+          letter-spacing: 2; }
           #contactMeSection #contactMeContainer #contactMeForm div:last-child input:active {
             outline: none; }
           #contactMeSection #contactMeContainer #contactMeForm div:last-child input:hover {
-            background-color: #31a7e9; }
+            background-color: #48b1ec; }
+  #contactMeSection p {
+    text-align: center;
+    font-weight: bold;
+    color: #e8f4f8;
+    margin: 0;
+    padding: 5rem 0 2rem 0; }
 
 @media (max-width: 800px) {
   #loadingScreen .loader {
@@ -379,12 +384,6 @@ body {
     left: 50%;
     margin-top: -2vh;
     margin-left: -2vh; }
-  .projectsContainer {
-    display: grid;
-    max-width: 90vw;
-    margin: 0 auto;
-    grid-gap: 2rem 1.5rem;
-    grid-template-columns: 1fr; }
   #headerSection {
     position: relative;
     width: 100%;
@@ -392,98 +391,126 @@ body {
     overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 0 0 5rem 0; }
+    align-items: center; }
     #headerSection:before {
       content: '';
       position: absolute;
       bottom: 0;
       width: 100%;
       height: 50px;
-      background: linear-gradient(to top, #68a4ca, transparent);
-      z-index: 100; }
-    #headerSection img:not(.bg) {
-      display: none; }
+      background: linear-gradient(to top, #e8f4f8, transparent);
+      z-index: 5; }
     #headerSection #scrollIndicator {
       display: none; }
-  #contactMeSection {
-    height: 80vh; }
-    #contactMeSection #contactMeContainer {
-      width: 90vw;
-      height: 150vw;
-      margin: 10vw auto;
+  #aboutMeSection {
+    position: relative;
+    margin-top: -20vh;
+    z-index: 5; }
+    #aboutMeSection .aboutMeCard {
+      display: block;
+      padding: 2rem 1rem;
+      max-width: 80vw;
+      margin: 5rem auto;
       background-color: white;
-      border-radius: 1%;
-      display: grid;
-      grid-template-rows: 10% 70% 20%;
-      grid-template-columns: 100%;
+      border-radius: 0.5rem;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
-      grid-template-areas: "header" "contactMeForm" "links"; }
-      #contactMeSection #contactMeContainer h1 {
-        grid-area: header;
-        margin: 1rem 0 0 0;
-        justify-self: center; }
-      #contactMeSection #contactMeContainer .myContactLinks {
-        grid-area: links;
-        text-align: center;
-        justify-self: center;
-        margin: 0;
-        align-self: center; }
-        #contactMeSection #contactMeContainer .myContactLinks .circle {
-          text-decoration: none;
-          display: inline-block;
-          width: 20vw;
-          height: 20vw;
-          line-height: 20vw;
-          border-radius: 50%;
+      text-align: center;
+      font-size: 1em; }
+      #aboutMeSection .aboutMeCard #aboutMePortrait img {
+        width: 75%; }
+      #aboutMeSection .aboutMeCard #aboutMeParagraph h2 {
+        font-weight: 900;
+        margin-bottom: 2rem;
+        margin-top: 0;
+        font-size: 3rem; }
+      #aboutMeSection .aboutMeCard #aboutMeParagraph .interline {
+        text-align: center; }
+      #aboutMeSection .aboutMeCard #aboutMeHobbies {
+        display: none; }
+      #aboutMeSection .aboutMeCard .myContactLinks {
+        display: none; }
+      #aboutMeSection .aboutMeCard .myContactLinksMobile {
+        display: block;
+        text-align: center; }
+        #aboutMeSection .aboutMeCard .myContactLinksMobile a {
+          text-decoration: none; }
+        #aboutMeSection .aboutMeCard .myContactLinksMobile img {
+          max-width: 15%;
+          margin: 0 1%; }
+  #projectsSection .projectsContainer {
+    display: grid;
+    max-width: 90vw;
+    margin: 0 auto;
+    grid-gap: 2rem 1.5rem;
+    grid-template-columns: 1fr; }
+  #contactMeSection h1 {
+    padding: 10vh 0 0 0; }
+  #contactMeSection #contactMeContainer {
+    width: 80vw;
+    height: 150vw;
+    margin: 10vw auto;
+    padding: 2rem 1rem;
+    background-color: white;
+    border-radius: 1%;
+    display: grid;
+    grid-template-rows: 70% 20%;
+    grid-template-columns: 100%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+    grid-template-areas: "contactMeForm" "links"; }
+    #contactMeSection #contactMeContainer h1 {
+      grid-area: header;
+      margin: 1rem 0 0 0;
+      justify-self: center; }
+    #contactMeSection #contactMeContainer .myContactLinks {
+      display: none; }
+    #contactMeSection #contactMeContainer .myContactLinksMobile {
+      grid-area: links;
+      display: block;
+      text-align: center;
+      justify-self: center;
+      margin: 0;
+      align-self: center; }
+      #contactMeSection #contactMeContainer .myContactLinksMobile a {
+        text-decoration: none; }
+      #contactMeSection #contactMeContainer .myContactLinksMobile img {
+        max-width: 15%;
+        margin: 0 1%; }
+    #contactMeSection #contactMeContainer #contactMeForm {
+      grid-area: contactMeForm;
+      justify-self: center;
+      width: 90%;
+      /* All input from form except the button send */
+      /* button send */ }
+      #contactMeSection #contactMeContainer #contactMeForm div:not(:last-child) {
+        margin: 1rem 0; }
+        #contactMeSection #contactMeContainer #contactMeForm div:not(:last-child) :focus {
+          outline: none;
+          background-color: #ededed; }
+        #contactMeSection #contactMeContainer #contactMeForm div:not(:last-child) input,
+        #contactMeSection #contactMeContainer #contactMeForm div:not(:last-child) textarea {
+          border: none;
+          border-radius: 25px;
+          background-color: lightgray;
+          height: 10vw;
+          width: 100%;
+          text-indent: 1rem; }
+        #contactMeSection #contactMeContainer #contactMeForm div:not(:last-child) textarea {
+          resize: none;
+          height: 40%;
+          padding-top: 1rem; }
+      #contactMeSection #contactMeContainer #contactMeForm div:last-child {
+        text-align: center; }
+        #contactMeSection #contactMeContainer #contactMeForm div:last-child input {
+          color: white;
+          background-color: #168ED1;
+          cursor: pointer;
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
           font-weight: bold;
-          margin: 0 auto;
-          color: black;
-          font-size: 3vw; }
-        #contactMeSection #contactMeContainer .myContactLinks .circle:nth-child(1) {
-          background: #ccf6c8; }
-        #contactMeSection #contactMeContainer .myContactLinks .circle:nth-child(2) {
-          background: #f9a959; }
-        #contactMeSection #contactMeContainer .myContactLinks .circle:nth-child(3) {
-          background: #fea5ad; }
-        #contactMeSection #contactMeContainer .myContactLinks .circle:nth-child(4) {
-          background: #c79ac8; }
-      #contactMeSection #contactMeContainer #contactMeForm {
-        grid-area: contactMeForm;
-        justify-self: center;
-        width: 90%;
-        /* All input from form except the button send */
-        /* button send */ }
-        #contactMeSection #contactMeContainer #contactMeForm div:not(:last-child) {
-          margin: 1rem 0; }
-          #contactMeSection #contactMeContainer #contactMeForm div:not(:last-child) :focus {
-            outline: none;
-            background-color: #ededed; }
-          #contactMeSection #contactMeContainer #contactMeForm div:not(:last-child) input,
-          #contactMeSection #contactMeContainer #contactMeForm div:not(:last-child) textarea {
-            border: none;
-            border-radius: 25px;
-            background-color: lightgray;
-            height: 10vw;
-            width: 100%;
-            text-indent: 1rem; }
-          #contactMeSection #contactMeContainer #contactMeForm div:not(:last-child) textarea {
-            resize: none;
-            height: 40%;
-            padding-top: 1rem; }
-        #contactMeSection #contactMeContainer #contactMeForm div:last-child {
-          text-align: center; }
-          #contactMeSection #contactMeContainer #contactMeForm div:last-child input {
-            color: white;
-            background-color: #168ED1;
-            cursor: pointer;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
-            font-weight: bold;
-            padding: 2vw;
-            border-radius: 2vw;
-            border: none;
-            outline: none;
-            transition: all 0.5s ease-in-out;
-            transition: width 2s; }
-            #contactMeSection #contactMeContainer #contactMeForm div:last-child input:active {
-              outline: none; } }
+          padding: 2vw;
+          border-radius: 2vw;
+          border: none;
+          outline: none;
+          transition: all 0.5s ease-in-out;
+          transition: width 2s; }
+          #contactMeSection #contactMeContainer #contactMeForm div:last-child input:active {
+            outline: none; } }

@@ -4,7 +4,8 @@ $boxShadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
 
 body{
 	margin: 0;
-	background: linear-gradient(to bottom, #68a4ca 150vh,#7fc3d4);
+	font-family: "eurostile", sans-serif;
+	background-color: lighten(lightblue, 15%);
 }
 
 #loadingScreen{
@@ -58,7 +59,6 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 0 0 5rem 0;
 
 	&:before{
 		content: '';
@@ -66,8 +66,8 @@ body{
 		bottom: 0;
 		width: 100%;
 		height: 200px;
-		background: linear-gradient(to top,  #68a4ca, transparent);
-		z-index: 100;
+		background: linear-gradient(to top,  lighten(lightblue, 15%), transparent);
+		z-index: 5;
 	}
 
 	.bg{
@@ -117,35 +117,7 @@ body{
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		z-index: 3;
-	}
-
-	#jenkinsLayer {
-		transform: rotate(-10deg);
-		bottom: 60%;
-		left: 5%;
-		z-index: 4;
-	}
-
-	#kibanaLayer {
-		transform: rotate(10deg);
-		bottom: 60%;
-		right: 5%;
-		z-index: 5;
-	}
-
-	#sqlDevLayer {
-		transform: rotate(-15deg);
-		bottom: 40%;
-		right: 5%;
-		z-index: 6;
-	}
-
-	#vsCodeLayer {
-		transform: rotate(15deg);
-		bottom: 40%;
-		left: 5%;
-		z-index: 7;
+		z-index: 0;
 	}
 
 	#scrollIndicator {
@@ -194,206 +166,231 @@ body{
 	}
 }  
 
-.aboutMeCard {
-	display: grid;
-	 //grid-template-columns: 2fr 4fr 1fr; 
-    padding: 1rem;
-    gap: 2rem;
-    max-width: 80vw;
-    margin: 5rem auto;
-    background-color: white;
-    border-radius: 0.5rem;
-	box-shadow: $boxShadow;
-	font-size: 1.8vw;
-	text-align: center;
+#aboutMeSection{
+	position: relative;
+	margin-top: -20vh;
+	z-index:5;
 
-	#aboutMePortrait {
-		img{
-			width: 25vw;
-		}
-	}
-
-	p {
-		font-size: 1.4vw;
-	}
-
-	.interline{
+	.aboutMeCard {
+		display: grid;
+		padding: 4rem;
+		gap: 2rem;
+		max-width: 70vw;
+		margin: 5rem auto;
+		background-color: white;
+		border-radius: 0.5rem;
+		box-shadow: $boxShadow;
 		text-align: center;
-	}
-
-	ul {
-		list-style-type: none;
-		font-size: 3vw;
-		text-align: center;
-		padding: 0;
-		margin-top: -1vw;
-	}
-
-	.myContactLinks {
-		text-align: center;
-		grid-column: 1 / span 3;
 		
-		.circle {
-			text-decoration: none;
-			display: inline-block;
-			width: 10vw;
-			height: 10vw;
-			line-height: 10vw;
-			border-radius: 50%;
-			font-weight: bold;
-			margin: 0 2vw;
-			color: black;
+		#aboutMePortrait {
+			img {
+					width: 20vw;
+			}
 		}
 
-		.circle:nth-child(1) {
-			background: #ccf6c8;
+		#aboutMeParagraph {
+			h2 {
+				font-weight: 900;
+				margin-bottom: 2rem;
+				margin-top: -2rem;
+				font-size: 3rem;
+			}
+
+			.interline{
+				text-align: center;
+			}
 		}
-		.circle:nth-child(2) {
-			background: lighten(#F6830F, 15%);
+		
+		ul {
+			list-style-type: none;
+			font-size: 2vw;
+			text-align: center;
+			padding: 0;
+			margin-top: -1vw;
 		}
-		.circle:nth-child(3) {
-			background: #fea5ad;
+
+		.myContactLinksMobile {
+			display: none;
 		}
-		.circle:nth-child(4) {
-			background: lighten(#be8abf, 5%);
+
+		.myContactLinks {
+			text-align: center;
+			grid-column: 1 / span 3;
+			
+			.circle {
+				text-decoration: none;
+				display: inline-block;
+				width: 8rem;
+				height: 8rem;
+				line-height: 8rem;
+				border-radius: 50%;
+				font-weight: bold;
+				margin: 0 2vw;
+				color: black;
+			}
+
+			.circle:nth-child(1) {
+				background: #ccf6c8;
+			}
+			.circle:nth-child(2) {
+				background: lighten(#F6830F, 15%);
+			}
+			.circle:nth-child(3) {
+				background: #fea5ad;
+			}
+			.circle:nth-child(4) {
+				background: lighten(#be8abf, 5%);
+			}
 		}
 	}
 }
 
 #projectsSection {
-	background-image: url('assets/projectsImages/projectsBg.jpg');
-	padding: 5rem 0;
+	text-align: center;
+	margin: 20vh 0;
+
+	h1{
+		font-size: 2.5rem;
+		margin: 10vh 0;
+	}
+
+	.projectsContainer {
+		display: grid;
+		max-width: 80vw;
+		margin: 0 auto;
+		grid-gap: 2rem 3rem;
+		grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+
+		.projectCard {
+			display: grid;
+			grid-template-rows: 15rem 3rem 1fr 5rem 3rem;
+			border-radius: $borderRadiusCard;
+			box-shadow: $boxShadow;
+			background-color: white;
+			
+			.cardImageContainer {
+				img {
+					object-fit: cover;
+					width: 100%;
+					height: 100%;
+					border-top-left-radius: $borderRadiusCard;
+					border-top-right-radius: $borderRadiusCard;
+				}
+			}
+
+			h1 {
+				margin: 2rem auto;
+			}
+
+			p {
+				margin: 4rem 1rem;
+			}
+
+			.technoContainer {
+				margin: 0 0 1rem 0;
+				text-align: center;
+				
+				&:before {
+					content: "";
+					border-top: 0.2rem solid #f2f4f7;
+					margin: 0.5rem 0 0.5rem 0;
+					display: block;
+					width: 100%;
+				}
+
+				img {
+					max-width: 3rem;
+					max-height: 3rem;
+					margin: 0 0.5rem;
+				}
+			}
+
+			.linksContainer {
+				background-color: #f2f4f7;
+				font-weight: bold;
+				text-decoration: none;
+				font-size: 1.3rem;
+				color: black;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-bottom-left-radius: $borderRadiusCard;
+				border-bottom-right-radius: $borderRadiusCard;
+			}
+		}
+	}
 }
 
-.projectsContainer {
-	display: grid;
-	max-width: 90vw;
-	margin: 0 auto;
-	grid-gap: 2rem 1.5rem;
-	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+/* Tooltip inspired by W3CSchool */
+/* https://www.w3schools.com/css/css_tooltip.asp */
+/* Tooltip container */
+.tooltip {
+	position: relative;
+	display: inline-block;
 }
 
-.projectCard {
-	display: grid;
-	grid-template-rows: 15rem 3rem 1fr 5rem 3rem;
-	border-radius: $borderRadiusCard;
-	box-shadow: $boxShadow;
-	background-color: white;
-	.cardImageContainer {
-		img {
-			object-fit: cover;
-			width: 100%;
-			height: 100%;
-			border-top-left-radius: $borderRadiusCard;
-			border-top-right-radius: $borderRadiusCard;
-		}
-	}
+/* Tooltip text */
+.tooltip .tooltiptext {
+	visibility: hidden;
+	font-size: 1rem;
+	width: 5rem;
+	top: 100%;
+	left: 50%;
+	margin-left: -2.5rem; /* Use half of the width (120/2 = 60), to center the tooltip */
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 0.5rem 0;
+	border-radius: 0.5rem;
+	border: 1px solid black;
+	/* Position the tooltip text - see examples below! */
+	position: absolute;
+	z-index: 1;
+}
 
-	h1 {
-		margin: 0.5rem auto;
-	}
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+}
 
-	p {
-		margin: 1rem 0.5rem;
-	}
-
-	.technoContainer {
-		margin: 0 0 1rem 0;
-		text-align: center;
-		
-		&:before {
-			content: "";
-			border-top: 0.2rem solid #f2f4f7;
-			margin: 0.5rem 0 0.5rem 0;
-			display: block;
-			width: 100%;
-		}
-
-		img {
-			max-width: 3rem;
-			max-height: 3rem;
-			margin: 0 0.5rem;
-		}
-	}
-
-	/* Tooltip inspired by W3CSchool */
-	/* https://www.w3schools.com/css/css_tooltip.asp */
-	/* Tooltip container */
-	.tooltip {
-		position: relative;
-		display: inline-block;
-	}
-
-	/* Tooltip text */
-	.tooltip .tooltiptext {
-		visibility: hidden;
-		font-size: 1rem;
-		width: 5rem;
-		top: 100%;
-		left: 50%;
-		margin-left: -2.5rem; /* Use half of the width (120/2 = 60), to center the tooltip */
-		background-color: black;
-		color: #fff;
-		text-align: center;
-		padding: 0.5rem 0;
-		border-radius: 0.5rem;
-		border: 1px solid black;
-		/* Position the tooltip text - see examples below! */
-		position: absolute;
-		z-index: 1;
-	}
-
-	/* Show the tooltip text when you mouse over the tooltip container */
-	.tooltip:hover .tooltiptext {
-		visibility: visible;
-	}
-
-	.tooltip .tooltiptext::after {
-		content: " ";
-		position: absolute;
-		bottom: 100%; /* At the bottom of the tooltip */
-		left: 50%;
-		margin-left: -5px;
-		border-width: 5px;
-		border-style: solid;
-		border-color: transparent transparent black transparent;
-	}
-
-	.linksContainer {
-		background-color: #f2f4f7;
-		text-align: center;
-		font-weight: bold;
-		text-decoration: none;
-		font-size: 1.3rem;
-		color: black;
-		padding: 0.5rem;
-		display: block;
-		border-bottom-left-radius: $borderRadiusCard;
-		border-bottom-right-radius: $borderRadiusCard;
-	}
+.tooltip .tooltiptext::after {
+	content: " ";
+	position: absolute;
+	bottom: 100%; /* At the bottom of the tooltip */
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent transparent black transparent;
 }
 
 
 #contactMeSection {
-	height: 80vh;
+    background-color: #061341;//darken(lightblue, 20%);
+	
+	h1 {
+		text-align: center;
+		font-weight: 900;
+		font-size: 4rem;
+		color: lighten(lightblue, 15%);
+		padding: 10vh 0;
+		margin: 0;
+	}
 
 	#contactMeContainer {
 		width: 70vw;
-		height: 70vh;
-		margin: 10vh auto;
+		margin: 0 auto;
 		background-color: white;
 		border-radius: 1%;
 		display: grid;
 		grid-template-columns: 15vh 1fr;
-		grid-template-rows: 1fr 100%;
 		grid-template-areas:
-			"header header"
 			"links contactMeForm";
-		box-shadow: $boxShadow;
-		
-		h1 {
-			grid-area: header;
-			justify-self: center;
+		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+		padding: 3rem;
+
+		.myContactLinksMobile {
+			display: none;
 		}
 
 		.myContactLinks {
@@ -426,11 +423,10 @@ body{
 				background: lighten(#be8abf, 5%);
 			}
 		}
-
+	
 		#contactMeForm {
 			grid-area: contactMeForm;
 			justify-self: center;
-
 			/* All input from form except the button send */
 			div:not(:last-child) {
 				margin: 1rem 0;
@@ -472,16 +468,26 @@ body{
 					border: none;
 					outline: none;
 					transition: all 0.5s ease-in-out;
+					letter-spacing: 2;
+
 					&:active{
 						outline: none;
 					}
 
 					&:hover {
-						background-color: lighten(#168ED1, 10%);
+						background-color: lighten(#168ED1, 15%);
 					}
 				}
 			}
 		}
+	}
+
+	p {
+		text-align: center;
+		font-weight: bold;
+		color: lighten(lightblue, 15%);
+		margin: 0;
+		padding: 5rem 0 2rem 0;
 	}
 }  
 
@@ -506,14 +512,7 @@ body{
 			margin-left: -2vh;
 		}
 	}
-	.projectsContainer {
-		display: grid;
-		max-width: 90vw;
-		margin: 0 auto;
-		grid-gap: 2rem 1.5rem;
-		grid-template-columns: 1fr;
-	}
-	
+
 	#headerSection {
 		position: relative;
 		width: 100%;
@@ -522,19 +521,15 @@ body{
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin: 0 0 5rem 0;
+
 		&:before{
 			content: '';
 			position: absolute;
 			bottom: 0;
 			width: 100%;
 			height: 50px;
-			background: linear-gradient(to top,  #68a4ca, transparent);
-			z-index: 100;
-		}
-	
-		img:not(.bg) {
-			display: none;
+			background: linear-gradient(to top,  lighten(lightblue, 15%), transparent);
+			z-index: 5;
 		}
 
 		#scrollIndicator {
@@ -542,21 +537,93 @@ body{
 		}
 	}
 
-	#contactMeSection {
-		height: 80vh;
+	#aboutMeSection {
+		position: relative;
+		margin-top: -20vh;
+		z-index:5;
+
+		.aboutMeCard {
+			display: block;
+			padding: 2rem 1rem;
+			max-width: 80vw;
+			margin: 5rem auto;
+			background-color: white;
+			border-radius: 0.5rem;
+			box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
+			text-align: center;
+			font-size: 1em;
+
+			#aboutMePortrait {
+				img {
+					width: 75%;
+				}
+			}
+
+			#aboutMeParagraph {
+				h2 {
+					font-weight: 900;
+					margin-bottom: 2rem;
+					margin-top: 0;
+					font-size: 3rem;
+				}
 	
+				.interline{
+					text-align: center;
+				}
+			}
+			
+			#aboutMeHobbies{
+				display : none;
+			}
+	
+			.myContactLinks {
+				display: none;
+			}
+
+			.myContactLinksMobile {
+				display: block;
+				text-align: center;
+
+				a {
+					text-decoration: none;
+				}
+
+				img {
+					max-width: 15%;
+					margin: 0 1%;
+				}
+			}
+		}
+	}
+
+	#projectsSection {
+		.projectsContainer {
+			display: grid;
+			max-width: 90vw;
+			margin: 0 auto;
+			grid-gap: 2rem 1.5rem;
+			grid-template-columns: 1fr;
+		}
+	}
+
+	#contactMeSection {
+
+		h1 {
+			padding: 10vh 0 0 0;
+		}
+
 		#contactMeContainer {
-			width: 90vw;
+			width: 80vw;
 			height: 150vw;
 			margin: 10vw auto;
+			padding: 2rem 1rem;
 			background-color: white;
 			border-radius: 1%;
 			display: grid;
-			grid-template-rows: 10% 70% 20%;
+			grid-template-rows: 70% 20%;
 			grid-template-columns: 100%;
 			box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.35);
 			grid-template-areas:
-				"header"
 				"contactMeForm"
 				"links";
 			
@@ -565,38 +632,26 @@ body{
 				margin: 1rem 0 0 0;
 				justify-self: center;
 			}
-	
+
 			.myContactLinks {
+				display: none;
+			}
+
+			.myContactLinksMobile {
 				grid-area: links;
+				display: block;
 				text-align: center;
 				justify-self: center;
 				margin: 0;
 				align-self: center;
 
-				.circle {
+				a {
 					text-decoration: none;
-					display: inline-block;
-					width: 20vw;
-					height: 20vw;
-					line-height: 20vw;
-					border-radius: 50%;
-					font-weight: bold;
-					margin: 0 auto;
-					color: black;
-					font-size: 3vw;
 				}
-	
-				.circle:nth-child(1) {
-					background: #ccf6c8;
-				}
-				.circle:nth-child(2) {
-					background: lighten(#f6830f, 15%);
-				}
-				.circle:nth-child(3) {
-					background: #fea5ad;
-				}
-				.circle:nth-child(4) {
-					background: lighten(#be8abf, 5%);
+
+				img {
+					max-width: 15%;
+					margin: 0 1%;
 				}
 			}
 	
