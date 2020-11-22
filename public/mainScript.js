@@ -1,27 +1,24 @@
 /* TODO LIST */
 
+/* TODO BONUS : implement a menu? */
 /* TODO BONUS contact me section : Too many blank space below contact links from contactMe section */
 /* TODO BONUS contact me section : Factorise the contactLinksMobile */
 /* TODO BONUS : Check portfolio behavior when bad internet connection */
 /* TODO BONUS Projects section : add multiple images */
-/* TODO BONUS : add a photography gallery */
+/* TODO BONUS : add a photography gallery (Some picture in demo (carroussel?) and a link to the full gallery?)*/
 /* TODO BONUS : add informations about this website (vanilla JS, firebase, SCSS) (during loading page?) */
 /* TODO BONUS project section : make 1 button see code and 1 button see in action for project */
 /* TODO BONUS Contact me section : Make better HTTP request with axios or promises rather than AJAX */
 /* TODO BONUS Contact me section : double check the sanityzing process, exemple message I love to do evil <img src="http://unsplash.it/100/100?random" onload="alert('you got hacked');" /> */
 /* TODO BONUS loadingScreen : make a better loading screen; */
 /* TODO BONUS : Clean media query (find best practice about it, where to position it) */
+/* TODO BONUS : add a section Montreal vs Toulouse where we compare different metric fetched by API?? */
 
 let loadingScreen = document.getElementById("loadingScreen");
 let titleHeader = document.getElementById("titleHeader");
 let scrollIndicator = document.getElementById("scrollIndicator");
 let contactMeForm = document.getElementById("contactMeForm");
 let contactMeSend = document.getElementById("contactMeSend");
-
-let coefTranslateAnimationHeaderParallax = 0.1;
-let coefFastTranslateAnimationHeaderParallax = 0.3;
-let coefScaleAnimationHeaderParallax = 0.002;
-let coefBlurAnimationHeaderParallax = 0.005;
 
 var sanitizeHTML = function (str) {
     var temp = document.createElement('div');
